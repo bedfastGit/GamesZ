@@ -1,0 +1,27 @@
+body{
+    background-color: #1a1a1a;
+    color: whitesmoke;
+}
+
+.banner-store{
+    height: 40em;
+    overflow: hidden;
+    background-color: #080e0f!important;
+    background: url(../pics/eldenbanner.jpg) no-repeat center;
+    background-size: 90em auto;
+    background-position: bottom;
+    /*
+    -webkit-mask-image: url(../pics/banner-mask.png);
+    mask-image: url(../pics/banner-mask.png);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    -webkit-mask-position: bottom;
+    mask-repeat: no-repeat;
+    */
+    clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 89%);
+}
+
+.store-content{
+    max-width: 78em;
+    margin: auto
+}
