@@ -1,15 +1,26 @@
 body{
-    background-color: #1a1a1a;
+    background-color: #242424;
     color: whitesmoke;
 }
 
+hr{
+    width: 88%;
+    margin: auto;
+    border-color: rgba(245, 245, 245, 0.53);
+}
+
+.dimm-text{
+    color: #bababa;
+}
+
 .banner-store{
-    height: 40em;
+    height: 38em;
     overflow: hidden;
     background-color: #080e0f!important;
-    background: url(../pics/eldenbanner.jpg) no-repeat center;
-    background-size: 90em auto;
-    background-position: bottom;
+    background: url(../pics/eldenbannerextend.png) no-repeat center;
+    background-size: cover;
+    background-position: center -18.5em;
+    background-attachment: fixed;
     /*
     -webkit-mask-image: url(../pics/banner-mask.png);
     mask-image: url(../pics/banner-mask.png);
@@ -21,7 +32,58 @@ body{
     clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 89%);
 }
 
+.contenidos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.5em;
+    justify-content: space-between
+}
+
 .store-content{
-    max-width: 78em;
-    margin: auto
+    max-width: 88em;
+    margin: auto;
+    padding: 1em;
+}
+
+.content-desc{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenidos p{
+    padding: 0.3em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1.1em;
+    padding-bottom: 0.7em
+}
+
+.content-div{
+    width: 28em;
+    height: 20em;
+}
+
+.content-img{
+    filter: drop-shadow(0.2em 0.2em 0.2em rgba(0, 0, 0, 0.65));
+    transition: transform .2s;
+    height: 16em
+}
+
+.content-img:hover{
+    transform: scale(1.06)
+}
+
+.content-img img{
+    max-width: 28em;
+    border-radius: 20px;
+    display: flex;
+}
+.content-img video{
+    max-width: 28em;
+    border-radius: 20px;
+    display: none;
+}
+.section{
+    background-color: black;
 }
