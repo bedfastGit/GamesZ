@@ -9,6 +9,39 @@ hr{
     border-color: rgba(245, 245, 245, 0.53);
 }
 
+#title-banner-store{
+    position: absolute;
+    margin-top: 8em;
+    margin-left: 2em;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.8em
+}
+
+#banner-items{
+    display: flex;
+    justify-content: flex-start;
+}
+#banner-items div{
+    padding: 0.3em;
+    margin-top: 0.3em;
+}
+#banner-discount{
+    background: linear-gradient(90deg, rgba(233,15,15,1) 10%, rgba(255,108,41,1) 87%);
+    border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+    height: 1.2em;
+    width: 2em;
+    display: flex;
+    justify-content: center
+}
+#banner-discount p{
+    font-size: 0.7em;
+    margin: auto;
+}
+#banner-price{
+    padding-left: 0.7em!important;
+    font-size: 1.2em;
+}
 .dimm-text{
     color: #bababa;
 }
@@ -19,7 +52,7 @@ hr{
     background-color: #080e0f!important;
     background: url(../pics/eldenbannerextend.png) no-repeat center;
     background-size: cover;
-    background-position: center -18.5em;
+    /*background-position: center -20em;*/
     background-attachment: fixed;
     /*
     -webkit-mask-image: url(../pics/banner-mask.png);
@@ -37,7 +70,7 @@ hr{
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0.5em;
-    justify-content: space-between
+    justify-content: space-around
 }
 
 .store-content{
@@ -45,7 +78,10 @@ hr{
     margin: auto;
     padding: 1em;
 }
-
+.store-content-ban{
+    max-width: 94em;
+    margin: auto
+}
 .content-desc{
     display: flex;
     justify-content: space-between;

@@ -26,3 +26,23 @@ function pausevid (pic, vid){
 
 // end of thumbnails
 
+// background parallax effect
+
+let bg = document.getElementById("bg")
+let positionBg = bg.style.backgroundPosition
+let mult = 0.001
+bg.style.backgroundPositionY = "-20em"
+let curpos = -20
+window.addEventListener("scroll", function(){
+    //this.alert(this.window.scrollY) 
+    let newpos = curpos + this.window.scrollY * mult
+    //this.alert(newpos)
+    
+    if (newpos < -20) newpos = -20
+    else if (newpos > 0) newpos = 0
+
+    curpos = newpos
+    bg.style.backgroundPositionY = newpos + "em"
+})
+
+// end of parallax
