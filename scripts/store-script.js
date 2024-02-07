@@ -30,16 +30,47 @@ function pausevid (pic, vid){
 
 let bg = document.getElementById("bg")
 let positionBg = bg.style.backgroundPosition
-let mult = 0.001
+let sumDonw = 0.02
+let sumUp = 0.04
 bg.style.backgroundPositionY = "-20em"
 let curpos = -20
+
+let prevScroll = window.scrollY
+let scrollDir
+let allowScrollDown = true
+
+// set scroll direction
+window.onscroll = function(){
+    if (prevScroll < window.scrollY) scrollDir = "Down"
+    else if (prevScroll > window.scrollY) scrollDir = "Up"
+    else console.log("something wrong with scrolly dir")
+
+    prevScroll = window.scrollY
+    if (prevScroll > 600) allowScrollDown = false
+    else allowScrollDown = true
+
+    //alert(prevScroll + " // " + allowScrollDown)
+}
+
+// manage parallax
 window.addEventListener("scroll", function(){
     //this.alert(this.window.scrollY) 
-    let newpos = curpos + this.window.scrollY * mult
+    let newpos
+    if (scrollDir === "Down" && allowScrollDown){
+        newpos = curpos + sumDonw
+        console.log("bajamos")
+    }
+    else if (scrollDir == "Up" && allowScrollDown){
+        newpos = curpos - sumUp
+        console.log("subimos")
+    }
+    //else console.log("-600")
+    
+
     //this.alert(newpos)
     
     if (newpos < -20) newpos = -20
-    else if (newpos > 0) newpos = 0
+    else if (newpos > -17) newpos = -17
 
     curpos = newpos
     bg.style.backgroundPositionY = newpos + "em"

@@ -9,6 +9,43 @@ hr{
     border-color: rgba(245, 245, 245, 0.53);
 }
 
+.black-banner{
+    background-color: black;
+}
+
+.section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em;
+}
+.section-component{
+    height: 10em;
+    width: 28em;
+    display: flex;
+}
+
+.section-content-div{
+    display: flex;
+    justify-content: space-between;
+    margin: auto
+}
+
+.section-content-div img{
+    height: 8em;
+    margin-right: 2em
+}
+
+.section-content-desc{
+    margin-right: 2em;
+}
+
+.bar-section{
+    border-right: 0.1em solid whitesmoke;
+    height: 5em;
+    margin: auto;
+}
+
 #title-banner-store{
     position: absolute;
     margin-top: 8em;
@@ -120,6 +157,36 @@ hr{
     border-radius: 20px;
     display: none;
 }
-.section{
-    background-color: black;
+
+#destacados{
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    text-decoration: none;
+    color: whitesmoke;
+    width: 10em;
+}
+
+#destacados:hover .arrow{
+    border: 0.25em solid #fdfdfd;
+    border-left: 0;
+    border-top: 0;
+}
+
+#arrow-container{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 0.3em;
+}
+
+.arrow{
+    width: 0.7em;
+    height: 0.7em;
+    border: 0.25em solid #bababa;
+    border-left: 0;
+    border-top: 0;
+
+    transform: rotate(315deg);
+    margin: auto;
+
 }
