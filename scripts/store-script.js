@@ -56,11 +56,11 @@ window.onscroll = function(){
 window.addEventListener("scroll", function(){
     //this.alert(this.window.scrollY) 
     let newpos
-    if (scrollDir === "Down" && allowScrollDown){
+    if (scrollDir === "Down"){
         newpos = curpos + sumDonw
         console.log("bajamos")
     }
-    else if (scrollDir == "Up" && allowScrollDown){
+    else if (scrollDir == "Up"){
         newpos = curpos - sumUp
         console.log("subimos")
     }
@@ -75,5 +75,7 @@ window.addEventListener("scroll", function(){
     curpos = newpos
     bg.style.backgroundPositionY = newpos + "em"
 })
+
+
 
 // end of parallax

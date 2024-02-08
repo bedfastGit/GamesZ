@@ -4,13 +4,13 @@ body{
 }
 
 hr{
-    width: 88%;
+    max-width: 88em;
     margin: auto;
-    border-color: rgba(245, 245, 245, 0.53);
+    border-color: #808080;
 }
 
 .black-banner{
-    background-color: black;
+    background-color: #101010;
 }
 
 .section{
@@ -32,17 +32,22 @@ hr{
 }
 
 .section-content-div img{
-    height: 8em;
-    margin-right: 2em
-}
-
-.section-content-desc{
+    height: 6em;
     margin-right: 2em;
 }
 
+#trustpilot-img{
+    margin: auto;
+    height: 8em;
+}
+
+.section-content-desc{
+    padding: 1em
+}
+
 .bar-section{
-    border-right: 0.1em solid whitesmoke;
-    height: 5em;
+    border-right: 0.08em solid #808080;
+    height: 4.5em;
     margin: auto;
 }
 
@@ -53,6 +58,10 @@ hr{
     text-decoration: none;
     color: whitesmoke;
     font-size: 1.8em
+}
+
+#bg{
+    
 }
 
 #banner-items{
@@ -82,7 +91,9 @@ hr{
 .dimm-text{
     color: #bababa;
 }
-
+#under-hardware{
+    background: url(../pics/ps5.png) no-repeat center;
+}
 .banner-store{
     height: 38em;
     overflow: hidden;
@@ -144,7 +155,8 @@ hr{
 }
 
 .content-img:hover{
-    transform: scale(1.06)
+    transform: scale(1.06);
+    filter: drop-shadow(0.6em 0.6em 0.6em rgba(0, 0, 0, 0.65));
 }
 
 .content-img img{
@@ -190,3 +202,139 @@ hr{
     margin: auto;
 
 }
+
+footer{
+    
+}
+
+.upper-footer{
+    height: 16em;
+    background-color: #2f2f2f;
+    display: flex;
+}
+
+.upper-footer div{
+    margin: auto;
+    text-align: center;
+    max-width: 88em;
+}
+
+.upper-footer img{
+    height: 5em;
+    margin-bottom: 0.5em;
+    filter: invert(90%)
+}
+
+.upper-footer button{
+    margin-top: 2em;
+    background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
+    padding: 1.5em 5em;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: whitesmoke;            
+    border-radius: 2em;
+    border: 0;
+    filter: drop-shadow(0.2em 0.2em 0.2em rgba(0, 0, 0, 0.65));
+}
+
+.upper-footer button:hover{
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+    filter: drop-shadow(1em 1em 1em rgba(0, 0, 0, 0.65));
+    cursor: pointer;
+}
+
+.lower-footer{
+    height: 23em;
+    
+}
+
+.lower-footer-content{
+    height: 13.5em;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    
+}
+
+.lower-footer img{
+    height: 8em
+}
+
+.e80percent{
+    max-width: 80em;
+    margin: auto;
+}
+
+.copy{
+    padding-top: 2em;
+}
+
+.menu-list-footer{
+    list-style-type: none;
+    padding-top: 1em;
+}
+
+.menu-list-footer a{
+    text-decoration: none !important;
+    color: #d6d6d6;
+}
+
+.menu-list-footer li{
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: auto;
+    margin-bottom: 1em;
+}
+
+.menu-list-footer a:hover{
+    color: #ffffff!important;
+}
+
+.foot-circles-container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.circle{
+    background: linear-gradient(90deg, rgba(233,15,15,1) 10%, rgba(255,108,41,1) 87%);
+    height: 4em;
+    width: 4em;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
+
+.circle-icon{
+    height: 1.8em!important;
+    margin: auto;
+    transition: transform .2s;
+}
+
+.circle:hover .circle-icon{
+    transform: scale(1.3);
+}
+
+.egg-bg{
+    background: linear-gradient(90deg, rgba(233,15,15,1) 10%, rgba(255,108,41,1) 87%);
+    border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+    height: 5em;
+    width: 7em;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.egg-bg img{
+    margin: auto;
+    height: 3.8em;
+}
+
+
+
