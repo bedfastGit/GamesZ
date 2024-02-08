@@ -4,6 +4,26 @@
     padding: 0;
     font-family: 'Nunito Sans', sans-serif;
 }
+
+#search-div{
+    background: linear-gradient(90deg, rgba(233,15,15,1) 10%, rgba(255,108,41,1) 87%);
+    height: 2.8em;
+    width: 2.8em;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#search-icon{
+    height: 1.1em;
+    margin: auto;
+    transition: transform .2s;
+}
+
+#search-div:hover #search-icon{
+    transform: scale(1.3);
+}
+
 .header{
     background-color: rgba(16, 16, 16, 0.87);
     backdrop-filter: blur(5px);
@@ -17,20 +37,24 @@
     z-index: 5;
 }
 .menu-list-div{
-    width: 100%;
-    text-align: center;
+    width: 30em;
+    margin: auto
 }
 .menu-list{
     list-style-type: none;
+    display: flex;
+    justify-content: center;
+    
 }
 .menu-list a{
     text-decoration: none !important;
     color: #d6d6d6;
 }
 .menu-list li{
-    display: inline;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .menu-list a:hover{
     color: #ffffff!important;
@@ -41,23 +65,49 @@
     border-radius: 20px;
 }
 .navbar-brand{
-    float: left;
-    padding-left: 1em
+    padding-left: 2em
     
 }
 .navbar-brand img{
     height: 4.5em;
 }
-.search-icon img{
-    height: 4em;
-    vertical-align: middle;
+
+#user-div{
+    /*
+    border-radius: 100%;
+    height: 2em;
+    width: 2em;
+    border: 0.15em solid #fdfdfd;
+    */
+    display: flex;
+    justify-content: center;
+    margin-right: 2em;
+    background-color: whitesmoke;
+    height: 2em;
+    width: 2em;
+    border-radius: 100%;
+    
+    -webkit-mask-image: url(../pics/mask-user-icon.png);
+    mask-image: url(../pics/mask-user-icon.png);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    -webkit-mask-position: bottom;
+    mask-repeat: no-repeat;
 }
-.user-icon{
-    padding-right: 1em;
-    float: right;
+
+#user-div:hover{
+    background-color: #ed3901;
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
+
+.user-icon {
+    margin: auto
 }
 .user-icon img{
-    height: 4.5em;
+    height: 1.5em;
+    filter: invert(90%)
 }
 .logo{
     height: 40px !important;
