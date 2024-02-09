@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <img src="pics/imagenlog2.png" alt="Fondo de la tienda de videojuegos" class="background-image">
+    <div class="content-box">
+      <img src="pics/gamesz.png" alt="Logo de la tienda de videojuegos" class="logo">
+      <form class="form" id="loginForm">
+        <label for="username" class="label">Usuario</label>
+        <div class="input-container">
+          <span class="input-icon">&#x1F464;</span>
+          <input type="text" id="username" class="user-input" placeholder="Nombre de usuario" required>
+        </div>
+
+        <label for="password" class="label">Contraseña</label>
+        <div class="input-container">
+          <span class="input-icon">&#x1F512;</span>
+          <input type="password" id="password" class="password-input" placeholder="Contraseña" required>
+        </div>
+
+        <button type="submit" class="login-button">Iniciar Sesión</button>
+      </form>
+
+      <div class="additional-options">
+        <hr>
+        <p>¿No tienes una cuenta? <a href="signup.html">Crear cuenta nueva</a></p>
+        <p><a href="contraseña.html">¿Has olvidado tu contraseña?</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/script.js"></script>
+</body>
+</html>
