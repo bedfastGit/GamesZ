@@ -1,6 +1,7 @@
 // handeling video playback on 
 // item thumbnails
 
+
 function playvid (pic, vid){
     let mypic = document.getElementById(pic)
     let myvid = document.getElementById(vid)
@@ -14,6 +15,7 @@ function playvid (pic, vid){
 }
 
 function pausevid (pic, vid){
+    //alert("mouse out")
     let mypic = document.getElementById(pic)
     let myvid = document.getElementById(vid)
 
@@ -29,9 +31,13 @@ function pausevid (pic, vid){
 // background parallax effect
 
 let bg = document.getElementById("bg")
+let bgs = document.getElementsByClassName("banner-store")
 let positionBg = bg.style.backgroundPosition
 let sumDonw = 0.02
 let sumUp = 0.04
+
+
+
 bg.style.backgroundPositionY = "-20em"
 let curpos = -20
 
