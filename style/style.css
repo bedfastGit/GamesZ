@@ -252,21 +252,14 @@ body{
     margin: 5px -10px ;
   }
 
-.botonP {
-    position: absolute;
-    top: 45%;
-    transform: translateY(-50%);
-    left: 420px;
-    font-size: 20px;
-}
-
 .mostrar{
     position: absolute;
-    top: 45%;
-    transform: translateY(-50%);
-    left: 420px;
+    width: 17%;
+    top: 110%;
+    left: 320px;
     font-size: 20px;
-    z-index: 10px;
+    background-color: #ff9748;
+    color: #fff;
 }
 
   .input-container-CPa {
@@ -274,7 +267,7 @@ body{
     justify-content: space-evenly;
     position: relative;
     width: 100%;
-    margin: 30px 13px;
+    margin: 50px 13px;
   }
 
   .input-container-FP {
@@ -282,5 +275,47 @@ body{
     justify-content: space-evenly;
     position: relative;
     width: 100%;
-    margin: 5px -10px;
+    margin: 30px -10px;
   }
+
+#crear{
+    display: none;
+}
+
+#usuario{
+    display: flex;
+}
+
+.container-terms {
+    margin: auto;
+    max-width: 800px;
+    padding: 30px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+
+.container-terms:hover {
+    transform: scale(1.05);
+  }
+
+h1 {
+color: #333;
+text-align: center;
+}
+
+ol {
+list-style: none;
+padding: 0;
+}
+
+li {
+margin-bottom: 20px;
+}
+
+p {
+margin-top: 20px;
+}
