@@ -93,13 +93,14 @@ hr{
 }
 #under-hardware{
     background: url(../pics/bi-stuido-bg.png) no-repeat center;
+    background-size: 200em auto;
 }
 .banner-store{
     height: 38em;
     overflow: hidden;
     background-color: #080e0f!important;
     background: url(../pics/eldenbannerextend.png) no-repeat center;
-    background-size: cover!important;
+    background-size: 220em auto;
     /*background-position: center -20em;*/
     background-attachment: fixed;
     /*
@@ -370,3 +371,64 @@ footer{
 .crossed-text{
     text-decoration: line-through;
 }
+
+.top-filter-div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.top-filter-item{
+    height: 2em;
+    width: 5em;
+    background-color: black;
+}
+
+.lower-filter-div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.lower-filter-item{
+    height: 2em;
+    width: 5em;
+    background-color: black;
+}
+
+.vertical-spacer{
+    border-right: 0.08em solid #808080;
+    height: 4.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -35,11 +35,10 @@ let bg2 = document.getElementById("under-hardware")
 let bgs = document.getElementsByClassName("banner-store")
 let positionBg = bg.style.backgroundPosition
 let sumDonw = 0.02
-let sumUp = 0.04
 const initialOffset = -24
-const initialOffset2 = -15
-const upperLimit = -17
-const upperLimit2 = -8
+const initialOffset2 = -28
+const upperLimit = -8
+const upperLimit2 = -18
 
 // cambiamos la posicion y de cada banner
 bg.style.backgroundPositionY = initialOffset + "em"
@@ -76,8 +75,8 @@ window.addEventListener("scroll", function(){
         console.log("bajamos")
     }
     else if (scrollDir == "Up"){
-        newpos = curpos - sumUp
-        newpos2 = curpos2 - sumUp
+        newpos = curpos - sumDonw
+        newpos2 = curpos2 - sumDonw
         console.log("subimos")
     }
     //else console.log("-600")
