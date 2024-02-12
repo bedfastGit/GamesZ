@@ -92,14 +92,14 @@ hr{
     color: #bababa;
 }
 #under-hardware{
-    background: url(../pics/ps5.png) no-repeat center;
+    background: url(../pics/bi-stuido-bg.png) no-repeat center;
 }
 .banner-store{
     height: 38em;
     overflow: hidden;
     background-color: #080e0f!important;
     background: url(../pics/eldenbannerextend.png) no-repeat center;
-    background-size: cover;
+    background-size: cover!important;
     /*background-position: center -20em;*/
     background-attachment: fixed;
     /*
@@ -335,5 +335,38 @@ footer{
     height: 3.8em;
 }
 
+.spacer{
+    height: 7em;
+}
 
+.filter-section{
+    height: 12em;
+}
 
+.game-discount{
+    background: linear-gradient(90deg, rgba(233,15,15,1) 10%, rgba(255,108,41,1) 87%);
+    border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+    height: 3em;
+    width: 4em;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    margin-top: 12em;
+    margin-left: 1em;
+    filter: drop-shadow(1em 1em 1em rgba(0, 0, 0, 0.65));
+    
+}
+.game-discount p{
+    font-size: 1em;
+    margin: auto;
+}
+
+.flexy-p{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.crossed-text{
+    text-decoration: line-through;
+}
