@@ -35,3 +35,14 @@ function login() {
         contrasenaInput.type = "password";
     }
 }
+
+function atrasSatanas(mostrar, esconder) {
+
+  let myesconder = getElementById(esconder);
+  let mymostrar = getElementById(mostrar);
+
+  myesconder.style.display = "none";
+  mymostrar.style.display = "flex";
+
+  alert ("h");
+}
