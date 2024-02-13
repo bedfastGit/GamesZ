@@ -7,9 +7,10 @@
   <title>Login</title>
 </head>
 <body>
-  <div class="container" id="usuario">
+  <div class="container">
+
     <img src="pics/imagenlog2.png" alt="Fondo de la tienda de videojuegos" class="background-image">
-    <div class="content-box">
+    <div class="content-box" id="usuario">
       <img src="pics/gamesz.png" alt="Logo de la tienda de videojuegos" class="logo">
       <form class="form" id="loginForm">
         <label for="username" class="label">Usuario</label>
@@ -29,15 +30,16 @@
 
       <div class="additional-options">
         <hr>
-        <p>¿No tienes una cuenta? <a href="#" onclick='atrasSatanas("crear","usuario")'>Crear cuenta nueva</a></p>
+        <p>¿No tienes una cuenta? <a href="#" onclick='atrasSatanas("crear", "usuario")'>Crear cuenta nueva</a></p>
         <p><a href="password.html">¿Has olvidado tu contraseña?</a></p>
       </div>
     </div>
-  </div>
+ 
     
     <div class="content-box" id="crear">
+
       <img src="pics/gamesz.png" alt="Logo de la tienda de videojuegos" class="logo">
-      <form class="form" id="loginForm" onsubmit="return validarFormulario()">
+      <form class="form" id="loginFormdos" onsubmit="return validarFormulario()">
 
         <div class="input-container-CPa">
             <label for="correo"></label>
@@ -81,11 +83,12 @@
 
         <br><button type="submit" class="login-button">Crear cuenta</button>
 
-        <div class="backk">
-           <br> <label for="atras" class="back" onclick='atrasSatanas("usuario","crear")'>Atras</label>
+        <div class="back">
+           <br> <label for="atras" class="back" onclick='atrasSatanas("usuario", "crear")'>Atras</label>
         </div>
       </form>
 
+    </div>
     </div>
 
   <script src="scripts/script.js"></script>
