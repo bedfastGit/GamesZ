@@ -252,6 +252,7 @@ body{
     margin: 5px -10px ;
   }
 
+
 .mostrar{
     position: absolute;
     width: 17%;
@@ -286,6 +287,15 @@ body{
     display: flex;
 }
 
+.back {
+color: #fff; 
+}
+  
+.back:hover {
+text-decoration: underline;
+color: #ff6d00;
+  }
+
 .container-terms {
     margin: auto;
     max-width: 800px;
@@ -318,4 +328,36 @@ margin-bottom: 20px;
 
 p {
 margin-top: 20px;
+}
+
+    #miBoton {
+      position: absolute;
+      color: #000;
+      top: 70%;
+      left: 75%;
+      transform: translate(-50%, -50%);
+    }
+
+    .miBoton {
+    background-color: #ff6d00;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 15;
+    }
+
+.formTroll {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: #fff;
+
 }

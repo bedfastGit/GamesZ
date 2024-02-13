@@ -38,11 +38,49 @@ function login() {
 
 function atrasSatanas(mostrar, esconder) {
 
-  let myesconder = getElementById(esconder);
-  let mymostrar = getElementById(mostrar);
+  //alert(mostrar + " espacio " + esconder)
+  let myesconder = document.getElementById(esconder);
+  let mymostrar = document.getElementById(mostrar);
 
   myesconder.style.display = "none";
   mymostrar.style.display = "flex";
-
-  alert ("h");
 }
+
+
+const miBoton = document.getElementById('miBoton');
+  let mouseEncima = false;
+
+  function moverBoton() {
+    const nuevoTop = Math.random() * (window.innerHeight - 50);
+    const nuevoLeft = Math.random() * (window.innerWidth - 100);
+
+    miBoton.style.top = `${Math.min(window.innerHeight - 50, Math.max(0, nuevoTop))}px`;
+    miBoton.style.left = `${Math.min(window.innerWidth - 100, Math.max(0, nuevoLeft))}px`;
+  }
+
+  miBoton.addEventListener('mouseover', () => {
+    mouseEncima = true;
+  });
+
+  miBoton.addEventListener('mouseout', () => {
+    mouseEncima = false;
+  });
+
+  document.addEventListener('mousemove', (event) => {
+    if (mouseEncima) {
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
+
+      const distanciaX = mouseX - miBoton.offsetLeft - miBoton.offsetWidth / 2;
+      const distanciaY = mouseY - miBoton.offsetTop - miBoton.offsetHeight / 2;
+
+      const distancia = Math.sqrt(distanciaX * distanciaX + distanciaY * distanciaY);
+
+      if (distancia > 150) {  // Distancia mínima para no tocar el ratón directamente
+        miBoton.style.top = `${Math.min(window.innerHeight - 50, Math.max(0, mouseY))}px`;
+        miBoton.style.left = `${Math.min(window.innerWidth - 100, Math.max(0, mouseX))}px`;
+      } else {
+        moverBoton();
+      }
+    }
+  });
