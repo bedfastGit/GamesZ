@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style/store-style.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <script src="scripts/store-script.js" defer></script>
+    <script src="scripts/filter.js" defer></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -37,17 +38,81 @@
     <!-- filter section -->
     <div class="filter-section store-content">
         <div class="top-filter-div">
-            <div class="top-filter-item"></div>
-            <div class="top-filter-item"></div>
-            <div class="top-filter-item"></div>
-            <div class="top-filter-item"></div>
+            <div class="item-container">
+                <div class="top-filter-item" onclick='toggleDropdown("drop-plat")'>
+                    <div class="top-item-title"><h2>Plataforma</h2></div>
+                    <div class="top-item-arrow"></div>
+                </div>
+                <div class="dropdown" id="drop-plat">
+                    <ul>
+                        <li class="first-li">PlayStation</li>
+                        <li>Xbox</li>
+                        <li class="last-li">Xbox</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="item-container">
+                <div class="top-filter-item" onclick='toggleDropdown("drop-sist")'>
+                    <div class="top-item-title"><h2>Sistema</h2></div>
+                    <div class="top-item-arrow"></div>
+                </div>
+                <div class="dropdown" id="drop-sist">
+                    <ul>
+                        <li class="first-li">PlayStation</li>
+                        <li>Xbox</li>
+                        <li class="last-li">Xbox</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="item-container">
+                <div class="top-filter-item" onclick='toggleDropdown("drop-gen")'>
+                    <div class="top-item-title"><h2>Género</h2></div>
+                    <div class="top-item-arrow"></div>
+                </div>
+                <div class="dropdown" id="drop-gen">
+                    <ul>
+                        <li class="first-li">PlayStation</li>
+                        <li>Xbox</li>
+                        <li class="last-li">Xbox</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="item-container">
+                <div class="top-filter-item" onclick='toggleDropdown("drop-sort")'>
+                    <div class="top-item-title"><h2>Ordenar</h2></div>
+                    <div class="top-item-arrow"></div>
+                </div>
+                <div class="dropdown" id="drop-sort">
+                    <ul>
+                        <li class="first-li">PlayStation</li>
+                        <li>Xbox</li>
+                        <li class="last-li">Xbox</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="lower-filter-div">
-            <div class="lower-filter-item"></div>
+            <div class="lower-filter-item first-lower-item">
+                <p class="dimm-text">Entre</p>
+                <div class="price-box"><textarea placeholder="0" id="min-price" rows="1" cols="1" class="mytextarea" ></textarea></div>
+                <p class="dimm-text">y</p>
+                <div class="price-box"><textarea placeholder="100" id="max-price" rows="1" cols="1" class="mytextarea" ></textarea></div>
+                <p class="dimm-text">€</p>
+            </div>
             <div class="vertical-spacer"></div>
-            <div class="lower-filter-item"></div>
+            <div class="lower-filter-item middle-lower-item">
+                <div id="stock-box"><div class="tick"></div></div>
+                <div id="stock-p"><p class="dimm-text"> En stock</p></div>
+            </div>
             <div class="vertical-spacer"></div>
-            <div class="lower-filter-item"></div>
+            <div class="top-filter-item last-lower-item" onclick="resetFilters()">
+                <div class="top-item-title">
+                    <h2>Reset filters</h2>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -253,7 +318,7 @@
         
         <div class="content-div">
             <div class="content-img">
-                <a href=""><img id="blackice-img" src="pics/bi-ice-bg.png"></a>
+                <a href=""><img id="blackice-img" src="pics/bi-stuido-bg-169.png"></a>
                 <a href=""><video autoplay="autoplay" muted id="blackice-vid" class="vid-thumbnail">
                     <source src="vids/ds1og-trailer.mp4" type="video/mp4" /></video>
                 </a>
