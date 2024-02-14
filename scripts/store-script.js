@@ -33,7 +33,8 @@ function pausevid (pic, vid){
 let bg = document.getElementById("bg")
 let bg2 = document.getElementById("under-hardware")
 let bgs = document.getElementsByClassName("banner-store")
-let positionBg = bg.style.backgroundPosition
+let positionBg
+if (bg != null) positionBg = bg.style.backgroundPosition
 let sumDonw = 0.02
 const initialOffset = -24
 const initialOffset2 = -28
@@ -41,8 +42,8 @@ const upperLimit = -8
 const upperLimit2 = -18
 
 // cambiamos la posicion y de cada banner
-bg.style.backgroundPositionY = initialOffset + "em"
-bg2.style.backgroundPositionY = initialOffset2 + "em"
+if (bg != null) bg.style.backgroundPositionY = initialOffset + "em"
+if (bg2 != null) bg2.style.backgroundPositionY = initialOffset2 + "em"
 
 let curpos = initialOffset
 let curpos2 = initialOffset2
@@ -99,8 +100,8 @@ window.addEventListener("scroll", function(){
     // set new positions
 
     console.log(newpos2, newpos)
-    bg.style.backgroundPositionY = newpos + "em"
-    bg2.style.backgroundPositionY = newpos2 + "em"
+    if (bg != null) bg.style.backgroundPositionY = newpos + "em"
+    if (bg2 != null) bg2.style.backgroundPositionY = newpos2 + "em"
 })
 
 
