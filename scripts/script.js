@@ -84,3 +84,29 @@ const miBoton = document.getElementById('miBoton');
       }
     }
   });
+
+  function openFileInput() {
+    document.getElementById('fileInput').click();
+  }
+
+  function changeAvatar(input) {
+    const file = input.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        const avatarImg = document.querySelector('.user-info img');
+        avatarImg.src = e.target.result;
+      };
+
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function changeUsername() {
+    const newUsername = document.getElementById('newUsername').value;
+    if (newUsername.trim() !== "") {
+      document.querySelector('.user-details h2').textContent = newUsername;
+    }
+  }
