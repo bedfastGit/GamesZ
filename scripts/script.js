@@ -1,15 +1,18 @@
 function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    var errorMessage = document.getElementById("error-message");
   
-    // Verifica las credenciales (esto es solo un ejemplo, no es seguro)
+    // Verifica las credenciales
     if (username === "user" && password === "user") {
-      // Credenciales correctas, redirige o realiza otras acciones necesarias
+      // Credenciales correctas
+      window.location.href = 'control.html';
+
       alert("Inicio de sesión exitoso");
+
+
     } else {
       // Credenciales incorrectas, muestra un mensaje de error
-      errorMessage.textContent = "Usuario o contraseña incorrectos";
+      alert("Usuario o contraseña incorrectos");
     }
   }
   
@@ -21,9 +24,10 @@ function login() {
     if (!correoRegex.test(correoInput.value)) {
         alert("Ingrese un correo electrónico válido");
         return false;
-    }
-
+    } else {
+      alert("Felicidades! Has creado tu cuenta!")
     return true;
+    }
   }
 
   function mostrarOcultarContrasena() {
