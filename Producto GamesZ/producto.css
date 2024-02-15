@@ -1,0 +1,221 @@
+body {
+    font-family: "DejaVu Sans Mono", monospace;
+    background-color: #242424;
+  
+}
+
+.mifondo {
+    height: 300px;
+    width: 100%;
+    background-image: url('fondo\ elden\ ring.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    position: absolute;
+    z-index: -5;
+}
+
+
+
+.producto {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    padding: 100px; 
+}
+
+.producto img {
+    width: 600px;
+    border: 2px ;
+    border-radius: 20px;
+    margin-right: 50px;
+}
+
+#info {
+    border: 2px solid #242424;
+    border-radius: 20px;
+    background-color: rgb(51, 51, 51, 0.6);
+    padding: 20px;
+    max-width: 600px; 
+    margin: 0 auto 50px auto; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+
+}
+
+h1 {
+    border-bottom: 3px solid #000; 
+    padding-bottom: 5px; 
+    color: white;
+}
+
+.stock {
+    align-items: center;
+    margin-bottom: 60px;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-size: large;
+    padding: 20px;
+    background-color: gray;
+    display: inline-block;
+    
+}
+
+.menus {
+    display: flex;
+    
+}
+
+#menu1 {
+    border: 2px solid gray;
+    border-radius: 20px;
+    display: inline-block;
+    background-color: gray;
+    font-size: large;
+    padding: 10px 20px; 
+}
+
+#plataforma,
+#edicion {
+    font-size: larger;
+    border: 2px solid orange;
+    border-radius: 20px;
+    background-color: orange;
+    transition: all 0.3s ease; 
+}
+
+#plataforma:hover,
+#edicion:hover {
+    background-color: darkorange; 
+    color: white; 
+    cursor: pointer;
+}
+
+#menu2 {
+    border: 2px solid gray;
+    border-radius: 20px;
+    display: inline-block;
+    background-color: gray;
+    margin-left: 20px;
+    font-size: large;
+    padding: 10px 20px; 
+    margin-right: 10px;
+}
+
+
+
+#precio {
+    font: oblique bold 120% cursive;
+    font-size: 30px;
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    margin-bottom: 30px;
+    color: white;
+}
+
+
+#carrito {
+    border: 2px solid orange;
+    border-radius: 20px;
+    background-color: orange;
+    display: inline-block;
+    font-size: 30px;
+    padding: 10px 20px; 
+    cursor: pointer;
+}
+
+#h2a { 
+    border-bottom: 3px solid #000; 
+    padding-bottom: 5px; 
+}
+#h2r {
+    border-bottom: 3px solid #000; 
+    padding-bottom: 5px;
+}
+
+.descripcion {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    margin-top: 10px;
+    padding-right: 100px;
+    padding-left: 100px; 
+}
+
+.acercade {
+    border: 2px solid #242424;
+    border-radius: 20px;
+    background-color: #242424;
+    color: wheat;
+    padding: 10px 20px;
+    width: 600px;
+    margin-right: 20px;
+}
+
+.review {
+    border: 2px solid #242424;
+    border-radius: 20px;
+    background-color: #242424;
+    color: wheat;
+    padding: 10px 20px;
+    width: 600px;
+}
+
+.trailer {
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    padding-right: 100px;
+    padding-left: 100px; 
+}
+
+.video-link {
+    display: block;
+    text-align: center;
+    margin-top: 50px; 
+  }
+  
+  .video {
+    width: 70%; 
+    max-width: 60; 
+    margin: 0 auto; 
+  }
+
+.noticias {
+    margin-top: 100px;
+    padding-right: 100px;
+    padding-left: 100px;
+    
+}
+
+h4{
+    color: white;
+}
+
+.primera {
+    display: flex;
+    margin-top: 80px;
+    
+}
+.n1 {
+    width: 100%;
+}
+.texto1 {
+    flex-direction: column;
+    padding-left: 20px;
+    color: #777;
+}
+  
+.segunda {
+    display: flex;
+}
+.n2 {
+    width: 95%;
+}
+
+.tercera {
+    display: flex;
+}
+.n3 {
+    width: 90%;
+}
