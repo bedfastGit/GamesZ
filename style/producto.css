@@ -7,7 +7,7 @@ body {
 .mifondo {
     height: 300px;
     width: 100%;
-    background-image: url('fondo\ elden\ ring.jpeg');
+    background-image: url('../Producto\ GamesZ/eldenring.jpg');
     background-attachment: fixed;
     background-size: cover;
     position: absolute;
