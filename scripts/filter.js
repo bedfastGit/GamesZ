@@ -28,7 +28,93 @@ let tick = document.getElementById("tick")
 let contents = document.getElementsByClassName("content-div")
 
 ///////////////////////////
+// objects
 
+let elden = document.getElementById("elden-ring")
+let sh2 = document.getElementById("sh2-remake")
+let alan2 = document.getElementById("alan2")
+let nier = document.getElementById("nier-automata")
+let re4 = document.getElementById("re4-remake")
+let ds1 = document.getElementById("dark-souls")
+let halo3 = document.getElementById("halo3")
+let bloodborne = document.getElementById("t-bloodborne")
+let ittakestwo = document.getElementById("t-ittakestwo")
+let ps5 = document.getElementById("ps5")
+let xbox_x = document.getElementById("series-x")
+let xbox_s = document.getElementById("series-s")
+let switch_og = document.getElementById("switch-og")
+let switch_oled = document.getElementById("switch-oled")
+let pc_blackice = document.getElementById("black-ice-pc")
+
+let items = [
+    {contenedor: elden, stock: false, price: 69.95, orden: 0, nombre: "elden ring", new_order: 0},
+    {contenedor: sh2, stock: true, price: 50.52, orden: 1, nombre: "silent hill 2", new_order: 0},
+    {contenedor: alan2, stock: false, price: 45.95, orden: 2, nombre: "alan wake 2", new_order: 0},
+    {contenedor: nier, stock: true, price: 32.43, orden: 3, nombre: "nier automata", new_order: 0},
+    {contenedor: re4, stock: true, price: 43.25, orden: 4, nombre: "resident evil 4", new_order: 0},
+    {contenedor: ds1, stock: true, price: 29.33, orden: 5, nombre: "dark souls", new_order: 0},
+    {contenedor: halo3, stock: false, price: 15.16, orden: 6, nombre: "halo 3", new_order: 0},
+    {contenedor: bloodborne, stock: true, price: 23.77, orden: 7, nombre: "bloodborne", new_order: 0},
+    {contenedor: ittakestwo, stock: true, price: 18.99, orden: 8, nombre: "it takes two", new_order: 0},
+    {contenedor: ps5, stock: false, price: 499.95, orden: 9, nombre: "ps5", new_order: 0},
+    {contenedor: xbox_x, stock: true, price: 480.66, orden: 10, nombre: "xbox series x", new_order: 0},
+    {contenedor: xbox_s, stock: true, price: 267.34, orden: 11, nombre: "xbox series s", new_order: 0},
+    {contenedor: switch_og, stock: false, price: 279.69, orden: 12, nombre: "switch", new_order: 0},
+    {contenedor: switch_oled, stock: true, price: 350.45, orden: 13, nombre: "switch oled", new_order: 0},
+    {contenedor: pc_blackice, stock: false, price: 2450.98, orden: 14, nombre: "desktop pc black ice", new_order: 0}
+]
+
+for (let i of items){
+    // set default order
+    i.contenedor.style.order = i.orden
+    
+    // set prices
+    let newText = document.getElementById(i.contenedor.id.toString() + "-price")
+    newText.textContent = i.price.toString() + "€"
+}
+
+
+// sort functions
+sortTest()
+function sortTest(){
+    items.sort(function(a,b){
+        if (a.nombre < b.nombre){
+            return -1
+        }
+        else if (a.nombre > b.nombre){
+            return 1
+        }
+        else {
+            return 0
+        }
+    })
+
+    alert(items[0].nombre)
+}
+
+applyNewOrder()
+
+function applyNewOrder(){
+    let x = 0
+    for (i of items){
+        i.new_order = x
+
+        x ++
+    }
+
+    for (let i of items){
+        i.contenedor.style.order = i.new_order
+    }
+}
+
+function reorderItems(){
+    for (let i of items){
+        // set default order
+        i.contenedor.style.order = i.orden
+    }
+}
+
+////////////////////////////////
 
 let toggleDisplayType = "flex"
 
@@ -101,6 +187,8 @@ function resetFilters(){
 function stockCheckBox(){
     stockCheck = !stockCheck
     toggleDropdown("tick")
+    
+    applyStoreChanges()
 }
 
 function liPressed(parentId, contentDiv, value){
@@ -143,8 +231,10 @@ let ruleSis = "content-div"
 let ruleGen = "content-div"
 
 function alterStoreContents(rule, ref){
+    let newRule 
+    
     if (rule == "Survival Horror") rule = "survival-horror"
-    let newRule = rule.toLowerCase()
+    if (rule != "stock") newRule = rule.toLowerCase()
     
     switch (ref){
         case "all":
@@ -161,13 +251,70 @@ function alterStoreContents(rule, ref){
         case "drop-gen":
             ruleGen = newRule
         break;
+        case "stock":
+            // it's fine
+        break;
         default:
             console.log("alterStoreContents ref invalid");
     }
 
-    for (let i of contents){
-        if (i.classList.contains(rulePlat) && i.classList.contains(ruleSis) && i.classList.contains(ruleGen)) i.style.display = "block"
-        else i.style.display = "none"
-    }
-    console.log("plat: " + rulePlat + " sis: " + ruleSis + " gen: " + ruleGen)
+    
+
+    applyStoreChanges()
+
+    //console.log("plat: " + rulePlat + " sis: " + ruleSis + " gen: " + ruleGen)
 }
+
+function applyStoreChanges(){
+    let x = 0
+    for (let i of contents){
+        if (stockCheck && items[x] != null){
+            if (items[x].stock && i.classList.contains(rulePlat) && i.classList.contains(ruleSis) && i.classList.contains(ruleGen) && items[x].price >= minPrice && items[x].price <= maxPrice) i.style.display = "block"
+            else i.style.display = "none"
+        }
+        else{
+            if (i.classList.contains(rulePlat) && i.classList.contains(ruleSis) && i.classList.contains(ruleGen) && items[x].price >= minPrice && items[x].price <= maxPrice) i.style.display = "block"
+            else i.style.display = "none"
+        }
+        x ++
+    }
+}
+
+
+// price stuff
+let expNumber = /^\d+$/
+
+let minPriceInput = document.getElementById("min-price")
+let maxPriceInput = document.getElementById("max-price")
+
+minPriceInput.addEventListener("keydown", function(e){
+    let value = e.target.value
+    if ((e.keyCode < 48 && keyCode != 8) || e.keyCode > 57){
+        e.preventDefault()
+    }
+    
+})
+
+minPriceInput.addEventListener("keyup", function(e){
+    minPriceInput.value = minPriceInput.value.replace(/^\s*|\s*$/g,'')
+    minPrice = minPriceInput.value
+    if (minPriceInput.value == "") minPrice = default_minPrice
+
+    applyStoreChanges()
+})
+
+maxPriceInput.addEventListener("keydown", function(e){
+    let value = e.target.value
+    
+    if ((e.keyCode < 48 && keyCode != 8) || e.keyCode > 57){
+        e.preventDefault()
+    }
+})
+
+maxPriceInput.addEventListener("keyup", function(e){
+    maxPriceInput.value = maxPriceInput.value.replace(/^\s*|\s*$/g,'')
+    maxPrice = maxPriceInput.value
+    if (maxPriceInput.value == "") maxPrice = default_maxPrice
+
+    applyStoreChanges()
+})
