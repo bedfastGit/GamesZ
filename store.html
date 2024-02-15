@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>GamesZ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/xicon" href="pics/gamesz.png">
+    <link rel="stylesheet" type="text/css" href="style/navbar-style.css">
+    <link rel="stylesheet" type="text/css" href="style/store-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <script src="scripts/store-script.js" defer></script>
+    <script src="scripts/filter.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <!-- brand logo -->
+        <a class="navbar-brand" href="index.html"><img src="pics/gamesz.png"></a>
+        <!-- pages list -->
+        <div class="menu-list-div">
+            <ul class="menu-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Games</a></li>
+                <li><a href="">Contact</a></li>
+                <li>
+                    <a href="">
+                        <div id="search-div"><img id="search-icon" src="pics/search-icon.png"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- user img -->
+        <!--<div id="user-div"><a class="user-icon" href="user.html"><img src="pics/user-icon.png"></a></div>-->
+        <a href=""><div id="user-div"></div></a>
+    </header>
+    <div class="spacer"></div>
+    
+    <!-- filter section -->
+    <div class="filter-section store-content">
+        <div class="top-filter-div">
+            <div class="item-container">
+                <div class="top-filter-item" onclick='toggleDropdown("drop-plat")' id="plat">
+                    <div class="top-item-title"><h2 id="plat-text">Plataforma</h2></div>
+                    <div class="top-item-arrow"></div>
+                </div>
+                <div class="dropdown" id="drop-plat">
+                    <ul>
+                        <li onclick='liPressed("drop-plat", "plat-text", "PlayStation")' class="first-li li" id="ps">PlayStation</li>
+                        <li onclick='liPressed("drop-plat", "plat-text", "Xbox")' class="li" id="xbox">Xbox</li>
+                        <li onclick='liPressed("drop-plat", "plat-text", "PC")' class="li" id="pc">PC</li>
+                        <li onclick='liPressed("drop-plat", "plat-text", "Nintendo")' class="last-li li" id="nintendo">Nintendo</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="item-container">
+                <div class="top-filter-item" onclick='toggleDropdown("drop-sist")'  id="sist">
+                    <div class="top-item-title"><h2 id="sist-text">Sistema</h2></div>
+                    <div class="top-item-arrow"></div>
+                </div>
+                <div class="dropdown" id="drop-sist">
+                    <ul>
+                        <li onclick='liPressed("drop-sist", "sist-text", "Juegos")' class="first-li li" id="juegos">Juegos</li>
+                        <li onclick='liPressed("drop-sist", "sist-text", "Handheld")' class="li" id="handheld">Handheld</li>
+                        <li onclick='liPressed("drop-sist", "sist-text", "Sobremesa")' class="li" id="sobremesa">Sobremesa</li>
+                        <li onclick='liPressed("drop-sist", "sist-text", "Consolas")' class="last-li li" id="consolas">Consolas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="item-container">
+                <div class="top-filter-item" onclick='toggleDropdown("drop-gen")'  id="gen">
+                    <div class="top-item-title"><h2 id="gen-text">Género</h2></div>
+                    <div class="top-item-arrow"></div>
+                </div>
+                <div class="dropdown" id="drop-gen">
+                    <ul>
+                        <li onclick='liPressed("drop-gen", "gen-text", "Survival Horror")' class="first-li li" id="survival-horror">Survival Horror</li>
+                        <li onclick='liPressed("drop-gen", "gen-text", "Souls-like")' class="li" id="souls-like">Souls-like</li>
+                        <li onclick='liPressed("drop-gen", "gen-text", "Cooperativo")' class="li" id="cooperativo">Cooperativo</li>
+                        <li onclick='liPressed("drop-gen", "gen-text", "Shooter")' class="li" id="shooter">Shooter</li>
+                        <li onclick='liPressed("drop-gen", "gen-text", "Aventura")' class="last-li li" id="aventura">Aventura</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="item-container">
+                <div class="top-filter-item" onclick='toggleDropdown("drop-sort")'  id="sort">
+                    <div class="top-item-title"><h2 id="sort-text">Ordenar</h2></div>
+                    <div class="top-item-arrow"></div>
+                </div>
+                <div class="dropdown" id="drop-sort">
+                    <ul>
+                        <li onclick='liPressed("drop-sort", "sort-text", "Precio Asc.")' class="first-li li" id="precio-ascendente">Precio Asc.</li>
+                        <li onclick='liPressed("drop-sort", "sort-text", "Precio Desc.")' class="li" id="precio-descendente">Precio Desc.</li>
+                        <li onclick='liPressed("drop-sort", "sort-text", "A - Z")' class="li" id="a-z">A - Z</li>
+                        <li onclick='liPressed("drop-sort", "sort-text", "Z - A")' class="last-li li" id="z-a">Z - A</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="lower-filter-div">
+            <div class="lower-filter-item first-lower-item">
+                <p class="dimm-text">Entre</p>
+                <div class="price-box"><textarea placeholder="0" id="min-price" rows="1" cols="1" class="mytextarea" ></textarea></div>
+                <p class="dimm-text">y</p>
+                <div class="price-box"><textarea placeholder="100" id="max-price" rows="1" cols="1" class="mytextarea" ></textarea></div>
+                <p class="dimm-text">€</p>
+            </div>
+            <div class="vertical-spacer"></div>
+            <div class="lower-filter-item middle-lower-item" onclick="stockCheckBox()">
+                <div id="stock-box"><div class="tick" id="tick"></div></div>
+                <div id="stock-p"><p class="dimm-text"> En stock</p></div>
+            </div>
+            <div class="vertical-spacer"></div>
+            <div class="top-filter-item last-lower-item" onclick="resetFilters()">
+                <div class="top-item-title">
+                    <h2>Reset filters</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- destacados -->
+    <div class="store-content" >
+        <a href="" id="destacados">
+            <h2>Tienda</h2>
+            <div id="arrow-container"><div class="arrow"></div></div>
+        </a>
+    </div>
+    <br>
+    <div class="store-content contenidos">
+        <div id="elden-ring" class="content-div playstation xbox pc juegos souls-like aventura cooperativo">
+            <div class="content-img">
+                <a href=""><img  onmouseover='playvid("elden-img", "elden-vid")' id="elden-img" src="pics/elden-ring-cover.png"></a>
+                <a href=""><video onmouseout='pausevid("elden-img", "elden-vid")' autoplay="autoplay" muted id="elden-vid" class="vid-thumbnail">
+                    <source src="vids/Radagon%20&%20Elden%20Beast%20RL1%20-%20ver.%201.09.1.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Elden Ring</p>
+                <p class="item-price">58.69€</p>
+            </div>
+        </div>
+        
+        <div id="sh2-remake" class="content-div playstation pc juegos survival-horror">
+            <div class="content-img">
+                <a href=""><img  onmouseover='playvid("silent2rem-img", "silent2rem-vid")' id="silent2rem-img" src="pics/sh-2-remake-cover.png"></a>
+                <a href=""><video onmouseout='pausevid("silent2rem-img", "silent2rem-vid")' autoplay="autoplay" muted id="silent2rem-vid" class="vid-thumbnail">
+                    <source src="vids/silent-vid.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Silent Hill 2</p>
+                <p class="item-price">60.95€</p>
+            </div>
+        </div>
+        
+        <div id="alan2" class="content-div playstation xbox pc juegos survival-horror aventura ">
+            <div class="content-img">
+                <a href=""><img  onmouseover='playvid("alanii-img", "alanii-vid")' id="alanii-img" src="pics/alan-wake-2-cover.png"></a>
+                <a href=""><video onmouseout='pausevid("alanii-img", "alanii-vid")' autoplay="autoplay" muted id="alanii-vid" class="vid-thumbnail">
+                    <source src="vids/Alan%20Wake%202%20%E2%80%94%20Launch%20Trailer.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Alan Wake II</p>
+                <p class="item-price">45.56€</p>
+            </div>
+        </div>
+        
+        <div id="nier-automata" class="content-div playstation xbox nintendo pc juegos aventura">
+            <div class="content-img">
+                <a href=""><img  onmouseover='playvid("nier-img", "nier-vid")' id="nier-img" src="pics/nier-cover.png"></a>
+                <a href=""><video onmouseout='pausevid("nier-img", "nier-vid")' autoplay="autoplay" muted id="nier-vid" class="vid-thumbnail">
+                    <source src="vids/nier-vid.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">NieR:Automata</p>
+                <p class="item-price">48.69€</p>
+            </div>
+        </div>
+        
+        <div id="re4-remake" class="content-div playstation xbox pc juegos survival-horror aventura">
+            <div class="content-img">
+                <a href=""><img  onmouseover='playvid("re4-img", "re4-vid")' id="re4-img" src="pics/re4-cover.jpg"></a>
+                <a href=""><video onmouseout='pausevid("re4-img", "re4-vid")' autoplay="autoplay" muted id="re4-vid" class="vid-thumbnail">
+                    <source src="vids/re4-vid.mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Resident Evil 4: Remake</p>
+                <p class="item-price">60.95€</p>
+            </div>
+        </div>
+        
+        <div id="dark-souls" class="content-div playstation xbox pc nintendo juegos cooperativo souls-like aventura">
+            <div class="content-img">
+                <a href=""><img  onmouseover='playvid("dsiog-img", "dsiog-vid")' id="dsiog-img" src="pics/darksouls-og-cover.png"></a>
+                <a href=""><video onmouseout='pausevid("dsiog-img", "dsiog-vid")' autoplay="autoplay" muted id="dsiog-vid" class="vid-thumbnail">
+                    <source src="vids/ds1og-trailer.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Dark Souls</p>
+                <p class="item-price">145.56€</p>
+            </div>
+        </div>
+        
+        <div id="halo3" class="content-div xbox pc juegos shooter cooperativo">
+            <div class="content-img">
+                <a href=""><div class="game-discount"><p style="color: whitesmoke">-15%</p></div><img  onmouseover='playvid("halo3-img", "halo3-vid")' id="halo3-img" src="pics/halo-3.jpg"></a>
+                <a href=""><video onmouseout='pausevid("halo3-img", "halo3-vid")' autoplay="autoplay" muted id="halo3-vid" class="vid-thumbnail">
+                    <source src="vids/halo3-vid.mp4" type="video/mp4"/></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Halo 3</p>
+                <div class="flexy-p">
+                    <p class="dimm-text crossed-text">69.99€</p>
+                    <p class="item-price">58.69€</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="t-bloodborne" class="content-div playstation pc juegos souls-like cooperativo aventura">
+            <div class="content-img">
+                <a href=""><div class="game-discount"><p style="color: whitesmoke">-25%</p></div><img  onmouseover='playvid("bloodborne-img", "bloodborne-vid")' id="bloodborne-img" src="pics/bloodborne-bg.png"></a>
+                <a href=""><video onmouseout='pausevid("bloodborne-img", "bloodborne-vid")' autoplay="autoplay" muted id="bloodborne-vid" class="vid-thumbnail">
+                    <source src="vids/bloodborne-vid.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Bloodborne</p>
+                <div class="flexy-p">
+                    <p class="dimm-text crossed-text">69.99€</p>
+                    <p class="item-price">58.69€</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="t-ittakestwo" class="content-div nintendo pc xbox juegos cooperativo aventura">
+            <div class="content-img">
+                <a href=""><div class="game-discount"><p style="color: whitesmoke">-10%</p></div><img  onmouseover='playvid("ittakestwo-img", "ittakestwo-vid")' id="ittakestwo-img" src="pics/ittakestwo.png"></a>
+                <a href=""><video onmouseout='pausevid("ittakestwo-img", "ittakestwo-vid")' autoplay="autoplay" muted id="ittakestwo-vid" class="vid-thumbnail">
+                    <source src="vids/ittakestwo-vid.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">It takes Two</p>
+                <div class="flexy-p">
+                    <p class="dimm-text crossed-text">69.99€</p>
+                    <p class="item-price">58.69€</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="ps5" class="content-div playstation consolas">
+            <div class="content-img">
+                <a href=""><img id="ps5-img" src="pics/ps5.png"></a>
+                <a href=""><video autoplay="autoplay" muted id="ps5-vid" class="vid-thumbnail">
+                    <source src="vids/Radagon%20&%20Elden%20Beast%20RL1%20-%20ver.%201.09.1.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">PS5 - lector</p>
+                <p class="item-price">499.95€</p>
+            </div>
+        </div>
+        
+        <div id="series-x" class="content-div xbox consolas">
+            <div class="content-img">
+                <a href=""><img id="seriesx-img" src="pics/seriesx.png"></a>
+                <a href=""><video autoplay="autoplay" muted id="seriesx-vid" class="vid-thumbnail">
+                    <source src="vids/silent-vid.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Xbox Series X</p>
+                <p class="item-price">460.95€</p>
+            </div>
+        </div>
+        
+        <div id="series-s" class="content-div xbox consolas">
+            <div class="content-img">
+                <a href=""><img id="seriess-img" src="pics/seriess.png"></a>
+                <a href=""><video autoplay="autoplay" muted id="seriess-vid" class="vid-thumbnail">
+                    <source src="vids/Alan%20Wake%202%20%E2%80%94%20Launch%20Trailer.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Xbox Series S</p>
+                <p class="item-price">295.77</p>
+            </div>
+        </div>
+        
+        <div id="switch-og" class="content-div nintendo consolas handheld">
+            <div class="content-img">
+                <a href=""><img id="switch-img" src="pics/switch.png"></a>
+                <a href=""><video autoplay="autoplay" muted id="switch-vid" class="vid-thumbnail">
+                    <source src="vids/nier-vid.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Nintendo Switch</p>
+                <p class="item-price">298.67€</p>
+            </div>
+        </div>
+        
+        <div id="switch-oled" class="content-div nintendo consolas handheld">
+            <div class="content-img">
+                <a href=""><img id="switcholed-img" src="pics/switch-oled.png"></a>
+                <a href=""><video autoplay="autoplay" muted id="switcholed-vid" class="vid-thumbnail">
+                    <source src="vids/re4-vid.mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Nintendo Switch: Oled</p>
+                <p class="item-price">356.89€</p>
+            </div>
+        </div>
+        
+        <div id="black-ice-pc" class="content-div pc sobremesa">
+            <div class="content-img">
+                <a href=""><img id="blackice-img" src="pics/bi-stuido-bg-169.png"></a>
+                <a href=""><video autoplay="autoplay" muted id="blackice-vid" class="vid-thumbnail">
+                    <source src="vids/ds1og-trailer.mp4" type="video/mp4" /></video>
+                </a>
+            </div>
+            <div class="content-desc">
+                <p class="item-title dimm-text">Desktop PC: Black Ice</p>
+                <p class="item-price">2460.69€</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- black banner -->
+    <br>
+    <div class="black-banner">
+        <div class="store-content section">
+            <div class="section-component">
+                <div class="section-content-div">
+                    <div class="egg-bg"><img src="pics/shield-logo.png"></div>
+                    <div class="section-content-desc">
+                        <h2>Confiable y Seguro</h2>
+                        <p class="dimm-text">Más de 1000 partners <br> oficiales </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bar-section"></div>
+            
+            <div class="section-component">
+                <div class="section-content-div">
+                    <div class="egg-bg"><img src="pics/customer-support.png"></div>
+                    <div class="section-content-desc">
+                        <h2>Atención al cliente</h2>
+                        <p class="dimm-text">Soporte 24/7 sin bots</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bar-section"></div>
+            
+            <div class="section-component">
+                <div class="section-content-div">
+                    <img id="trustpilot-img" src="pics/trustpilot-example.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    
+    <!-- footer section -->
+    <footer>
+        <div class="upper-footer">
+            <div>
+                <img src="pics/paper-plane.png">
+                <h2>No te pierdas nuestras ofertas y promos!</h2>
+                <p class="dimm-text">Sé el primero en enterarte de nuestras ofertas exclusivas y primicias de la semana</p>
+                <a href=""><button type="button">Sign Up!</button></a>
+            </div>
+        </div>
+        <div class="lower-footer black-banner">
+            <div class="e80percent">
+                <div class="lower-footer-content">
+                    <img src="pics/trustpilot-example.png">
+                        
+                    <ul class="menu-list-footer">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="">Games</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">User</a></li>
+                    </ul>
+                    
+                    <div class="foot-circles-container">
+                        <a href=""><div class="circle"><img class="circle-icon" src="pics/x-logo.png"></div></a>
+                        <a href=""><div class="circle"><img class="circle-icon" src="pics/instagram-logo.png"></div></a>
+                        <a href=""><div class="circle"><img class="circle-icon" src="pics/facebook-logo.png"></div></a>
+                        <a href=""><div class="circle"><img class="circle-icon" src="pics/gmail-logo.png"></div></a>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <p class="dimm-text copy">Copyright &#169; 2024 GamesZ - All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

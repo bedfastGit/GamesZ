@@ -1,0 +1,363 @@
+body{
+    background-color: #242424;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .background-image {
+    flex: 1;
+    width: 50%;
+    object-fit: cover;
+    object-position: left;
+  }
+  
+  .content-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  }
+  
+  .logo {
+    width: 120px;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .form:hover {
+    transform: scale(1.05);
+  }
+  
+  .label {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .input-container {
+    position: relative;
+    width: 100%;
+    margin: 8px 0;
+  }
+  
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    font-size: 20px;
+  }
+  
+  .user-input {
+    width: calc(100% - 24px);
+    padding: 12px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .user-input:hover {
+    border: 2px solid #ff6d00;
+  }
+
+  
+  .user-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  }
+  
+  .password-input {
+    width: calc(100% - 24px);
+    padding: 12px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .password-input:hover {
+    border: 2px solid #ff6d00;
+  }
+
+  
+  .password-input:focus {
+    border-color: #c0392b; /* Rojo más oscuro al enfocar la contraseña */
+    box-shadow: 0 0 10px rgba(192, 57, 43, 0.5);
+  }
+  
+  .login-button {
+    background-color: #ff9748;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .login-button:hover {
+    background-color: #ff6d00;
+  }
+  
+  #errorMessage {
+    color: #e74c3c;
+    margin-top: 10px;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .additional-options {
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  .additional-options a {
+    text-decoration: none;
+    color: #ff9748;
+    font-weight: bold;
+    transition: text-decoration 0.3s ease-in-out;
+  }
+  
+  .additional-options a:hover {
+    text-decoration: underline;
+    color: #ff6d00;
+  }
+  
+  .apellido-input {
+    width: 40%;
+    padding: 12px;
+    padding-left: 60px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .apellido-input:hover {
+    border: 2px solid #ff6d00;
+  }
+
+  .fecha-input {
+    width: 40%;
+    padding: 12px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .fecha-input:hover {
+    border: 2px solid #ff6d00;
+  }
+
+
+  .correo-input {
+    width: 40%;
+    height: 50%;
+    padding: 12px;
+    padding-left: 70px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .correo-input:hover {
+    border: 2px solid #ff6d00;
+  }
+
+  .pais-input {
+    width: 40%;
+    padding: 12px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .pais-input:hover {
+    border: 2px solid #ff6d00;
+  }
+
+  .usuario-input {
+    width: 40%;
+    padding: 12px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .usuario-input:hover {
+    border: 2px solid #ff6d00;
+  }
+
+  .contrasena-input {
+    width: 75%;
+    padding: 12px;
+    padding-left: 60px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .contrasena-input:hover {
+    border: 2px solid #ff6d00;
+  }
+
+  .input-container-UsA {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    width: 100%;
+    margin: 5px -10px ;
+  }
+
+
+.mostrar{
+    position: absolute;
+    width: 17%;
+    top: 110%;
+    left: 320px;
+    font-size: 20px;
+    background-color: #ff9748;
+    color: #fff;
+}
+
+  .input-container-CPa {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    width: 100%;
+    margin: 50px 13px;
+  }
+
+  .input-container-FP {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    width: 100%;
+    margin: 30px -10px;
+  }
+
+#crear{
+    display: none;
+}
+
+#usuario{
+    display: flex;
+}
+
+.back {
+color: #fff; 
+}
+  
+.back:hover {
+text-decoration: underline;
+color: #ff6d00;
+  }
+
+.container-terms {
+    margin: auto;
+    max-width: 800px;
+    padding: 30px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+
+.container-terms:hover {
+    transform: scale(1.05);
+  }
+
+h1 {
+color: #333;
+text-align: center;
+}
+
+ol {
+list-style: none;
+padding: 0;
+}
+
+li {
+margin-bottom: 20px;
+}
+
+p {
+margin-top: 20px;
+}
+
+    #miBoton {
+      position: absolute;
+      color: #000;
+      top: 70%;
+      left: 75%;
+      transform: translate(-50%, -50%);
+    }
+
+    .miBoton {
+    background-color: #ff6d00;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 15;
+    }
+
+.formTroll {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: #fff;
+
+}

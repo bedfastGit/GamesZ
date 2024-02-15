@@ -1,6 +1,7 @@
 // handeling video playback on 
 // item thumbnails
 
+
 function playvid (pic, vid){
     let mypic = document.getElementById(pic)
     let myvid = document.getElementById(vid)
@@ -14,6 +15,7 @@ function playvid (pic, vid){
 }
 
 function pausevid (pic, vid){
+    //alert("mouse out")
     let mypic = document.getElementById(pic)
     let myvid = document.getElementById(vid)
 
@@ -29,11 +31,22 @@ function pausevid (pic, vid){
 // background parallax effect
 
 let bg = document.getElementById("bg")
-let positionBg = bg.style.backgroundPosition
+let bg2 = document.getElementById("under-hardware")
+let bgs = document.getElementsByClassName("banner-store")
+let positionBg
+if (bg != null) positionBg = bg.style.backgroundPosition
 let sumDonw = 0.02
-let sumUp = 0.04
-bg.style.backgroundPositionY = "-20em"
-let curpos = -20
+const initialOffset = -24
+const initialOffset2 = -28
+const upperLimit = -8
+const upperLimit2 = -18
+
+// cambiamos la posicion y de cada banner
+if (bg != null) bg.style.backgroundPositionY = initialOffset + "em"
+if (bg2 != null) bg2.style.backgroundPositionY = initialOffset2 + "em"
+
+let curpos = initialOffset
+let curpos2 = initialOffset2
 
 let prevScroll = window.scrollY
 let scrollDir
@@ -52,16 +65,19 @@ window.onscroll = function(){
     //alert(prevScroll + " // " + allowScrollDown)
 }
 
+let newpos = curpos
+let newpos2 = curpos2
 // manage parallax
 window.addEventListener("scroll", function(){
     //this.alert(this.window.scrollY) 
-    let newpos
-    if (scrollDir === "Down" && allowScrollDown){
+    if (scrollDir === "Down"){
         newpos = curpos + sumDonw
+        newpos2 = curpos2 + sumDonw
         console.log("bajamos")
     }
-    else if (scrollDir == "Up" && allowScrollDown){
-        newpos = curpos - sumUp
+    else if (scrollDir == "Up"){
+        newpos = curpos - sumDonw
+        newpos2 = curpos2 - sumDonw
         console.log("subimos")
     }
     //else console.log("-600")
@@ -69,11 +85,25 @@ window.addEventListener("scroll", function(){
 
     //this.alert(newpos)
     
-    if (newpos < -20) newpos = -20
-    else if (newpos > -17) newpos = -17
+    // limit banner1 Ypos
+    if (newpos < initialOffset) newpos = initialOffset
+    else if (newpos > upperLimit) newpos = upperLimit
 
+    // limit banner2 Ypos
+    if (newpos2 < initialOffset2) newpos2 = initialOffset2
+    else if (newpos2 > upperLimit2) newpos2 = upperLimit2
+
+    // update curpos
     curpos = newpos
-    bg.style.backgroundPositionY = newpos + "em"
+    curpos2 = newpos2
+
+    // set new positions
+
+    console.log(newpos2, newpos)
+    if (bg != null) bg.style.backgroundPositionY = newpos + "em"
+    if (bg2 != null) bg2.style.backgroundPositionY = newpos2 + "em"
 })
+
+
 
 // end of parallax
