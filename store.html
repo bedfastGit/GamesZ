@@ -102,9 +102,9 @@
         <div class="lower-filter-div">
             <div class="lower-filter-item first-lower-item">
                 <p class="dimm-text">Entre</p>
-                <div class="price-box"><textarea placeholder="0" id="min-price" rows="1" cols="1" class="mytextarea" ></textarea></div>
+                <div class="price-box"><textarea placeholder="0" id="min-price" rows="1" cols="1" class="mytextarea" maxlength="4" onkeydown="textIn()"></textarea></div>
                 <p class="dimm-text">y</p>
-                <div class="price-box"><textarea placeholder="100" id="max-price" rows="1" cols="1" class="mytextarea" ></textarea></div>
+                <div class="price-box"><textarea placeholder="100" id="max-price" rows="1" cols="1" class="mytextarea" maxlength="4" onkeydown="textIn()"></textarea></div>
                 <p class="dimm-text">€</p>
             </div>
             <div class="vertical-spacer"></div>
@@ -139,7 +139,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">Elden Ring</p>
-                <p class="item-price">58.69€</p>
+                <p class="item-price" id="elden-ring-price">58.69€</p>
             </div>
         </div>
         
@@ -152,7 +152,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">Silent Hill 2</p>
-                <p class="item-price">60.95€</p>
+                <p class="item-price" id="sh2-remake-price">60.95€</p>
             </div>
         </div>
         
@@ -165,7 +165,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">Alan Wake II</p>
-                <p class="item-price">45.56€</p>
+                <p class="item-price" id="alan2-price">45.56€</p>
             </div>
         </div>
         
@@ -178,7 +178,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">NieR:Automata</p>
-                <p class="item-price">48.69€</p>
+                <p class="item-price" id="nier-automata-price">48.69€</p>
             </div>
         </div>
         
@@ -191,7 +191,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">Resident Evil 4: Remake</p>
-                <p class="item-price">60.95€</p>
+                <p class="item-price" id="re4-remake-price">60.95€</p>
             </div>
         </div>
         
@@ -204,7 +204,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">Dark Souls</p>
-                <p class="item-price">145.56€</p>
+                <p class="item-price" id="dark-souls-price">145.56€</p>
             </div>
         </div>
         
@@ -219,7 +219,7 @@
                 <p class="item-title dimm-text">Halo 3</p>
                 <div class="flexy-p">
                     <p class="dimm-text crossed-text">69.99€</p>
-                    <p class="item-price">58.69€</p>
+                    <p class="item-price" id="halo3-price">58.69€</p>
                 </div>
             </div>
         </div>
@@ -235,7 +235,7 @@
                 <p class="item-title dimm-text">Bloodborne</p>
                 <div class="flexy-p">
                     <p class="dimm-text crossed-text">69.99€</p>
-                    <p class="item-price">58.69€</p>
+                    <p class="item-price" id="t-bloodborne-price">58.69€</p>
                 </div>
             </div>
         </div>
@@ -251,7 +251,7 @@
                 <p class="item-title dimm-text">It takes Two</p>
                 <div class="flexy-p">
                     <p class="dimm-text crossed-text">69.99€</p>
-                    <p class="item-price">58.69€</p>
+                    <p class="item-price" id="t-ittakestwo-price">58.69€</p>
                 </div>
             </div>
         </div>
@@ -265,7 +265,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">PS5 - lector</p>
-                <p class="item-price">499.95€</p>
+                <p class="item-price" id="ps5-price">499.95€</p>
             </div>
         </div>
         
@@ -278,7 +278,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">Xbox Series X</p>
-                <p class="item-price">460.95€</p>
+                <p class="item-price" id="series-x-price">460.95€</p>
             </div>
         </div>
         
@@ -291,7 +291,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">Xbox Series S</p>
-                <p class="item-price">295.77</p>
+                <p class="item-price" id="series-s-price">295.77</p>
             </div>
         </div>
         
@@ -304,7 +304,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">Nintendo Switch</p>
-                <p class="item-price">298.67€</p>
+                <p class="item-price" id="switch-og-price">298.67€</p>
             </div>
         </div>
         
@@ -317,7 +317,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">Nintendo Switch: Oled</p>
-                <p class="item-price">356.89€</p>
+                <p class="item-price" id="switch-oled-price">356.89€</p>
             </div>
         </div>
         
@@ -330,7 +330,7 @@
             </div>
             <div class="content-desc">
                 <p class="item-title dimm-text">Desktop PC: Black Ice</p>
-                <p class="item-price">2460.69€</p>
+                <p class="item-price" id="black-ice-pc-price">2460.69€</p>
             </div>
         </div>
     </div>
