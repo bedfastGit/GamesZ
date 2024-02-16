@@ -6,11 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamesZ - Sobre Nosotros</title>
     <link rel="stylesheet" href="style/contacto.css">
+    
+    <link rel="stylesheet" href="style/navbar-style.css">
+        <link rel="stylesheet" href="style/store-style.css">
 </head>
 <body>
-    <header class="site-header">
-        <img src="HTMLCSS jesus/gamesz.png" alt="GamesZ Logo" class="logo">
-    </header>
+    <!-- Navbar -->
+        <header class="header">
+            <!-- brand logo -->
+            <a class="navbar-brand" href="index.html"><img src="pics/gamesz.png"></a>
+            <!-- pages list -->
+            <div class="menu-list-div">
+                <ul class="menu-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="store.html">Games</a></li>
+                    <li><a href="contacto.html">Contact</a></li>
+                    <li>
+                        <a href="user.html">
+                            <div id="search-div"><img id="search-icon" src="pics/user-icon.png"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- user img -->
+            <!--<div id="user-div"><a class="user-icon" href="user.html"><img src="pics/user-icon.png"></a></div>-->
+            <div id="user-div" style="visibility: hidden"></div>
+        </header>
+    <br><br><br><br>
+    <div class="site-header">
+        <img src="HTMLCSS jesus/gamesz.png" alt="GamesZ Logo" class="logo2">
+    </div>
 
     <section class="about_section">
         <div class="container">
@@ -81,5 +106,43 @@
         </div>
     </div>
 </section>
+    
+    <div class="spacer"></div>
+<!-- footer section -->
+        <footer>
+            <div class="upper-footer">
+                <div>
+                    <img src="pics/paper-plane.png">
+                    <h2>No te pierdas nuestras ofertas y promos!</h2>
+                    <p class="dimm-text">Sé el primero en enterarte de nuestras ofertas exclusivas y primicias de la semana</p>
+                    <a href="user.html"><button type="button">Sign Up!</button></a>
+                </div>
+            </div>
+            <div class="lower-footer black-banner">
+                <div class="e80percent">
+                    <div class="lower-footer-content">
+                        <img src="pics/trustpilot-example.png">
+
+                        <ul class="menu-list-footer">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="store.html">Games</a></li>
+                            <li><a href="contacto.html">Contact</a></li>
+                            <li><a href="user.html">User</a></li>
+                        </ul>
+
+                        <div class="foot-circles-container">
+                            <a href="https://twitter.com/?lang=en" target="_blank"><div class="circle"><img class="circle-icon" src="pics/x-logo.png"></div></a>
+                            <a href="https://www.instagram.com/bedfast_bld/" target="_blank"><div class="circle"><img class="circle-icon" src="pics/instagram-logo.png"></div></a>
+                            <a href="https://www.facebook.com/" target="_blank"><div class="circle"><img class="circle-icon" src="pics/facebook-logo.png"></div></a>
+                            <a href="mailto:info@gamesz.com"><div class="circle"><img class="circle-icon" src="pics/gmail-logo.png"></div></a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <p class="dimm-text copy">Copyright &#169; 2024 GamesZ - All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 </body>
 </html>
