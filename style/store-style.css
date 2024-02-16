@@ -633,6 +633,48 @@ footer{
 .item-container{
 }
 
+.x-container{
+    height: 2em;
+    width: 2em;
+    background: linear-gradient(90deg, rgba(233,15,15,1) 10%, rgba(255,108,41,1) 87%);
+    border-radius: 100%;
+    position: absolute;
+    margin-left: 13.5em;
+    margin-top: -0.5em;
+    display: none;
+}
+
+.x-container:hover{
+    cursor: pointer;
+}
+
+.draw-x{
+    width: 0.5em;
+    height: 0.5em;
+    border: 0.2em solid #bababa;
+    border-left: 0;
+    border-top: 0;
+
+    transform: rotate(315deg);
+    position: absolute;
+    
+    margin-left: 0.25em;
+    margin-top: 0.6em
+}
+
+.draw-x2{
+    width: 0.5em;
+    height: 0.5em;
+    border: 0.2em solid #bababa;
+    border-left: 0;
+    border-top: 0;
+
+    transform: rotate(135deg);
+    position: absolute;
+    
+    margin-left: 1.05em;
+    margin-top: 0.6em;
+}
 
 
 
