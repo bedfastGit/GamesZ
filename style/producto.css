@@ -229,12 +229,21 @@ h4{
     width: 90%;
 }
 
-.ps5n1 {
-    
+.primera2 {
+    display: flex;
+    margin-top: 80px;
 }
-.ps5n2 {
-    
+
+.segunda2 {
+    display: flex;
 }
-.ps5n3 {
-    
+
+.tercera2 {
+    display: flex;
+}
+
+.texto2 {
+    flex-direction: column;
+    padding-left: 20px;
+    color: #777;
 }
