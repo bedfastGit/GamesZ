@@ -1,11 +1,34 @@
 // handeling video playback on 
 // item thumbnails
 
+let pics = document.getElementsByClassName("play-img")
+let vids = document.getElementsByClassName("vid-thumbnail")
 
-function playvid (pic, vid){
-    let mypic = document.getElementById(pic)
-    let myvid = document.getElementById(vid)
+for (let i of pics){
+    i.addEventListener("mouseover", function(e){
+        let target = i.parentElement
+        playvid(target)
+    })
+}
 
+for (let i of vids){
+    i.addEventListener("mouseout", function(e){
+        let target = i.parentElement
+        pausevid(target)
+    })
+}
+
+function playvid(e){
+    //let mypic = document.getElementById(pic)
+    //let myvid = document.getElementById(vid)
+    //alert(e)
+    let parent_mypic = e
+    let parent_myvid = parent_mypic.nextElementSibling
+    
+    let mypic = parent_mypic.firstChild
+    let myvid = parent_myvid.firstChild
+
+    //alert(mypic + myvid)
     mypic.style.display = "none"
     myvid.style.display = "flex"
 
@@ -14,10 +37,16 @@ function playvid (pic, vid){
     //alert("playing")
 }
 
-function pausevid (pic, vid){
+function pausevid (e){
     //alert("mouse out")
-    let mypic = document.getElementById(pic)
-    let myvid = document.getElementById(vid)
+    //let mypic = document.getElementById(pic)
+    //let myvid = document.getElementById(vid)
+
+    let parent_myvid = e
+    let parent_mypic = parent_myvid.previousElementSibling
+
+    let myvid = parent_myvid.firstChild
+    let mypic = parent_mypic.firstChild
 
     mypic.style.display = "flex"
     myvid.style.display = "none"
