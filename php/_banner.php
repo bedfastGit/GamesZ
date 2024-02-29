@@ -1,7 +1,7 @@
 <!-- top image banner -->
 <div class="banner-store" id="bg">
     <div class="store-content-ban">
-        <a id="title-banner-store" href="producto.html">
+        <a id="title-banner-store" href="store.php">
             <h3>Elden Ring:</h3> 
             <h3>Game of the Year Edition</h3>
             <div id="banner-items">

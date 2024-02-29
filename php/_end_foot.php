@@ -1,3 +1,4 @@
+<br><br>
 </main>
 <!-- footer section -->
 <footer>
@@ -6,7 +7,7 @@
                 <img src="../pics/paper-plane.png">
                 <h2>No te pierdas nuestras ofertas y promos!</h2>
                 <p class="dimm-text">Sé el primero en enterarte de nuestras ofertas exclusivas y primicias de la semana</p>
-                <a href="user.html"><button type="button">Sign Up!</button></a>
+                <a href="user.php"><button type="button">Sign Up!</button></a>
             </div>
         </div>
         <div class="lower-footer black-banner">
@@ -15,10 +16,10 @@
                     <img src="../pics/trustpilot-example.png">
                         
                     <ul class="menu-list-footer">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="store.html">Games</a></li>
-                        <li><a href="contacto.html">Contact</a></li>
-                        <li><a href="user.html">User</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="store.php">Games</a></li>
+                        <li><a href="contacto.php">Contact</a></li>
+                        <li><a href="user.php">User</a></li>
                     </ul>
                     
                     <div class="foot-circles-container">
