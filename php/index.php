@@ -29,19 +29,7 @@
     <!-- contenedor seccion juegos -->
     <div class="store-content contenidos">
         <?php foreach ($save_juego as $key => $item): ?>
-            <div id="<?= $item["id"] ?>" class="content-div">
-                <div class="content-img">
-                    <a href="producto.php?id=<?= $item["id"] ?>"><img class="play-img" src="<?= '../pics/' . $item["img"] ?>">
-                    </a>
-                    <a href="producto.php?id=<?= $item["id"] ?>"><video autoplay="autoplay" muted class="vid-thumbnail">
-                        <source src="<?= '../vids/' . $item["vid"] ?>" type="video/mp4" /></video>
-                    </a>
-                </div>
-                <div class="content-desc">
-                    <p class="item-title dimm-text"><?= $item["nombre"] ?></p>
-                    <p class="item-price"><?= $item["precio"] ?></p>
-                </div>
-            </div>
+            <?php require("_item.php") ?>
         <?php endforeach; ?>
     </div>
 
@@ -60,16 +48,7 @@
     <!-- hw -->
     <div class="store-content contenidos">
         <?php foreach ($save_hw as $key => $item): ?>
-            <div id="<?= $item["id"] ?>" class="content-div">
-                <div class="content-img">
-                    <a href="producto.php?id=<?= $item["id"] ?>"><img class="play-img no-vid" src="<?= '../pics/' . $item["img"] ?>">
-                    </a>
-                </div>
-                <div class="content-desc">
-                    <p class="item-title dimm-text"><?= $item["nombre"] ?></p>
-                    <p class="item-price"><?= $item["precio"] ?></p>
-                </div>
-            </div>
+            <?php require("_item.php") ?>
         <?php endforeach; ?>
     </div>
 
@@ -88,23 +67,7 @@
     <!-- descuentos -->
     <div class="store-content contenidos">
         <?php foreach ($save_deals as $key => $item): ?>
-            <div id="<?= $item["id"] ?>" class="content-div">
-                <div class="content-img">
-                    <a href="producto.php?id=<?= $item["id"] ?>"><img class="play-img" src="<?= '../pics/' . $item["img"] ?>">
-                        <div class="game-discount"><p style="color: whitesmoke">-15%</p></div>
-                    </a>
-                    <a href="producto.php?id=<?= $item["id"] ?>"><video autoplay="autoplay" muted class="vid-thumbnail">
-                        <source src="<?= '../vids/' . $item["vid"] ?>" type="video/mp4" /></video>
-                    </a>
-                </div>
-                <div class="content-desc">
-                    <p class="item-title dimm-text"><?= $item["nombre"] ?></p>
-                    <div class="flexy-p">
-                        <p class="dimm-text crossed-text"><?= $item["p_descuento"] ?></p>
-                        <p class="item-price"><?= $item["precio"] ?></p>
-                    </div>
-                </div>
-            </div>
+            <?php require("_item.php") ?>
         <?php endforeach; ?>
     </div>
 

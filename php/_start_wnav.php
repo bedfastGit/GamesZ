@@ -9,13 +9,13 @@
     <link rel="stylesheet" type="text/css" href="../style/store-style.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <script src="../scripts/store-script.js" defer></script>
-    <script <?= $optional_script ?> defer></script>
+    <script src="../scripts/filter.js" defer></script>
 </head>
 <body>
     <!-- Navbar -->
     <header class="header">
         <!-- brand logo -->
-        <a class="navbar-brand" href="index.html"><img src="../pics/gamesz.png"></a>
+        <a class="navbar-brand" href="index.php"><img src="../pics/gamesz.png"></a>
         <!-- pages list -->
         <div class="menu-list-div">
             <ul class="menu-list">

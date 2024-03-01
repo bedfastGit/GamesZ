@@ -32,7 +32,7 @@ let crosses = document.getElementsByClassName("x-container")
 
 ///////////////////////////
 // objects
-
+/*
 let elden = document.getElementById("elden-ring")
 let sh2 = document.getElementById("sh2-remake")
 let alan2 = document.getElementById("alan2")
@@ -48,6 +48,7 @@ let xbox_s = document.getElementById("series-s")
 let switch_og = document.getElementById("switch-og")
 let switch_oled = document.getElementById("switch-oled")
 let pc_blackice = document.getElementById("black-ice-pc")
+
 
 let items = [
     {contenedor: elden, stock: false, price: 69.95, orden: 0, nombre: "elden ring", new_order: 0, tags: "content-div playstation xbox pc juegos souls-like aventura cooperativo"},
@@ -75,8 +76,12 @@ for (let i of items){
     let newText = document.getElementById(i.contenedor.id.toString() + "-price")
     newText.textContent = i.price.toString() + "€"
 }
-
+*/
 // sort functions
+
+let items = []
+
+
 
 // alphabetical sort
 function sortItems(){
@@ -389,38 +394,45 @@ let expNumber = /^\d+$/
 let minPriceInput = document.getElementById("min-price")
 let maxPriceInput = document.getElementById("max-price")
 
-minPriceInput.addEventListener("keydown", function(e){
-    let value = e.target.value
-    if ((e.keyCode < 48 && keyCode != 8) || e.keyCode > 57){
-        e.preventDefault()
-    }
-    
-})
+if (minPriceInput != null){
+    minPriceInput.addEventListener("keydown", function(e){
+        let value = e.target.value
+        if ((e.keyCode < 48 && keyCode != 8) || e.keyCode > 57){
+            e.preventDefault()
+        }
+        
+    })
+}
 
-minPriceInput.addEventListener("keyup", function(e){
-    minPriceInput.value = minPriceInput.value.replace(/^\s*|\s*$/g,'')
-    minPrice = minPriceInput.value
-    if (minPriceInput.value == "") minPrice = default_minPrice
+if (minPriceInput != null){
+    minPriceInput.addEventListener("keyup", function(e){
+        minPriceInput.value = minPriceInput.value.replace(/^\s*|\s*$/g,'')
+        minPrice = minPriceInput.value
+        if (minPriceInput.value == "") minPrice = default_minPrice
 
-    applyStoreChanges()
-})
+        applyStoreChanges()
+    })
+}
 
-maxPriceInput.addEventListener("keydown", function(e){
-    let value = e.target.value
-    
-    if ((e.keyCode < 48 && keyCode != 8) || e.keyCode > 57){
-        e.preventDefault()
-    }
-})
+if (maxPriceInput != null){
+    maxPriceInput.addEventListener("keydown", function(e){
+        let value = e.target.value
+        
+        if ((e.keyCode < 48 && keyCode != 8) || e.keyCode > 57){
+            e.preventDefault()
+        }
+    })
+}
 
-maxPriceInput.addEventListener("keyup", function(e){
-    maxPriceInput.value = maxPriceInput.value.replace(/^\s*|\s*$/g,'')
-    maxPrice = maxPriceInput.value
-    if (maxPriceInput.value == "") maxPrice = default_maxPrice
+if (maxPriceInput != null){
+    maxPriceInput.addEventListener("keyup", function(e){
+        maxPriceInput.value = maxPriceInput.value.replace(/^\s*|\s*$/g,'')
+        maxPrice = maxPriceInput.value
+        if (maxPriceInput.value == "") maxPrice = default_maxPrice
 
-    applyStoreChanges()
-})
-
+        applyStoreChanges()
+    })
+}
 // crosses management
 function xtreme(in_id){
     switch (in_id){
