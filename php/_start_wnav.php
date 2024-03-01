@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../style/store-style.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <script src="../scripts/store-script.js" defer></script>
+    <script <?= $optional_script ?> defer></script>
 </head>
 <body>
     <!-- Navbar -->

@@ -5,17 +5,21 @@ let pics = document.getElementsByClassName("play-img")
 let vids = document.getElementsByClassName("vid-thumbnail")
 
 for (let i of pics){
-    i.addEventListener("mouseover", function(e){
-        let target = i.parentElement
-        playvid(target)
-    })
+    if (!i.classList.contains("no-vid")){
+        i.addEventListener("mouseover", function(e){
+            let target = i.parentElement
+            playvid(target)
+        })
+    }
 }
 
 for (let i of vids){
-    i.addEventListener("mouseout", function(e){
-        let target = i.parentElement
-        pausevid(target)
-    })
+    if (!i.classList.contains("no-vid")){
+        i.addEventListener("mouseout", function(e){
+            let target = i.parentElement
+            pausevid(target)
+        })
+    }
 }
 
 function playvid(e){
@@ -27,8 +31,10 @@ function playvid(e){
     
     let mypic = parent_mypic.firstChild
     let myvid = parent_myvid.firstChild
+    let discount_pic = mypic.nextElementSibling
 
     //alert(mypic + myvid)
+    if (discount_pic != null) discount_pic.style.display = "none"
     mypic.style.display = "none"
     myvid.style.display = "flex"
 
@@ -47,7 +53,9 @@ function pausevid (e){
 
     let myvid = parent_myvid.firstChild
     let mypic = parent_mypic.firstChild
+    let discount_pic = mypic.nextElementSibling
 
+    if (discount_pic != null) discount_pic.style.display = "flex"
     mypic.style.display = "flex"
     myvid.style.display = "none"
 
@@ -136,3 +144,4 @@ window.addEventListener("scroll", function(){
 
 
 // end of parallax
+
