@@ -2,12 +2,12 @@
     require ("initdb.php");
     $titulo = "Home";
 
-    $consulta = "select * from productos ;";
+    // realizamos las consultas necesarias para cada seccion
     $consulta_juego = "select * from productos where tags like '%juego%' && tags not like '%deals%' limit 6 ;";
     $consulta_hw = "select * from productos where tags like '%sobremesa%' || tags like '%consolas%' limit 6 ;";
     $consulta_deals = "select * from productos where tags like '%deals%' limit 3 ;";
 
-    $save = $conn -> query($consulta);
+    //guardamos dichas consultas
     $save_juego = $conn -> query($consulta_juego);
     $save_hw = $conn -> query($consulta_hw);
     $save_deals = $conn -> query($consulta_deals);
@@ -21,7 +21,7 @@
     <div class="store-content" >
         <a href="store.php" id="destacados">
             <h2>Destacados</h2>
-            <div id="arrow-container"><div class="arrow"></div></div>
+            <div class="arrow-container"><div class="arrow"></div></div>
         </a>
     </div>
     <br>
@@ -34,13 +34,13 @@
     </div>
 
     <!-- middle section -->
-    <?php require("_middle_section.php")?>
+    <?php require("_middle_section.php")?><br><br>
 
     <!-- seccion consolas -->
     <div class="store-content" >
         <a href="store.php" id="destacados">
             <h2>Hardware</h2>
-            <div id="arrow-container"><div class="arrow"></div></div>
+            <div class="arrow-container"><div class="arrow"></div></div>
         </a>
     </div>
     <br>
@@ -59,7 +59,7 @@
     <div class="store-content" >
         <a href="store.php" id="destacados">
             <h2>Ofertas</h2>
-            <div id="arrow-container"><div class="arrow"></div></div>
+            <div class="arrow-container"><div class="arrow"></div></div>
         </a>
     </div>
     <br>
@@ -70,5 +70,6 @@
             <?php require("_item.php") ?>
         <?php endforeach; ?>
     </div>
+    <br><br>
 
 <?php require_once("_end_foot.php")?>

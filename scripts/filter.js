@@ -77,11 +77,19 @@ for (let i of items){
     newText.textContent = i.price.toString() + "€"
 }
 */
-// sort functions
+
 
 let items = []
 
+// objeto, stock, precio, orden, nombre, nuevo_orden, tags;
+for (let i of contents){
+    let newObject = {contenedor: i, stock: parseInt(i.getAttribute("data-stock")), price: parseFloat(i.getAttribute("data-precio")), orden: i.getAttribute("data-orden"), nombre: i.getAttribute("data-nombre"), new_order: 0, tags: i.getAttribute("data-tags")};
+    items.push(newObject)
+}
 
+//alert(items.length)
+//alert(items[3].stock)
+//console.log(items)
 
 // alphabetical sort
 function sortItems(){
@@ -183,7 +191,6 @@ function fillDropLists(){
 }
 
 window.addEventListener("mousedown", function(e){
-    
     switch(e.target.id){
         case "plat":
             hideSlides("drop-plat")
@@ -361,7 +368,7 @@ for (let i of items){
 function applyStoreChanges(){
     for (let i of items){
         if (stockCheck){
-            if (i.stock && i.tags.includes(rulePlat) && i.tags.includes(ruleSis) && i.tags.includes(ruleGen) && i.price >= minPrice && i.price <= maxPrice) i.contenedor.style.display = "block"
+            if (i.stock == 1 && i.tags.includes(rulePlat) && i.tags.includes(ruleSis) && i.tags.includes(ruleGen) && i.price >= minPrice && i.price <= maxPrice) i.contenedor.style.display = "block"
             else i.contenedor.style.display = "none"
         }
         else{
