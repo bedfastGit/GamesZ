@@ -60,10 +60,6 @@ hr{
     font-size: 1.8em
 }
 
-#bg{
-    
-}
-
 #banner-items{
     display: flex;
     justify-content: flex-start;
@@ -204,10 +200,6 @@ hr{
     transform: rotate(315deg);
     margin: auto;
 
-}
-
-footer{
-    
 }
 
 .upper-footer{
@@ -628,9 +620,6 @@ footer{
 .last-li {
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
-}
-
-.item-container{
 }
 
 .x-container{
