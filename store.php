@@ -1,8 +1,14 @@
 <?php
     $titulo = "Store";
     require ("initdb.php");
-    $my_limit = 4;
-    $my_offset = 0;
+    $my_limit = 9;
+
+    if (isset($_GET["id"])){
+        $my_offset = $_GET["id"] * $my_limit;
+    }
+    else{
+        $my_offset = 0;
+    }
 
     // hacemos una consulta con los primeros 15 items para mostrar en la pagina
     $consulta = "select * from productos order by orden limit $my_limit offset $my_offset;";
@@ -48,7 +54,7 @@
         <?php endforeach; ?>
     </div>
 
-    <div class="store-content">
+    <div class="store-content page-list">
         <?php for ($x=1; $x<=$n_pages; $x++){
             require("_page.php");
         }?>

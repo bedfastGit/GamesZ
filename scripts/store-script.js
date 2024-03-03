@@ -30,16 +30,17 @@ function playvid(e){
     let parent_myvid = parent_mypic.nextElementSibling
     
     let mypic = parent_mypic.firstChild
-    let myvid = parent_myvid.firstChild
+    let myvid = null
+    if (parent_myvid != null) myvid = parent_myvid.firstChild
     let discount_pic = mypic.nextElementSibling
 
     //alert(mypic + myvid)
     if (discount_pic != null) discount_pic.style.display = "none"
-    mypic.style.display = "none"
-    myvid.style.display = "flex"
+    if (myvid != null) mypic.style.display = "none"
+    if (myvid != null)myvid.style.display = "flex"
 
-    myvid.load()
-    myvid.play()
+    if (myvid != null) myvid.load()
+    if (myvid != null) myvid.play()
     //alert("playing")
 }
 

@@ -12,5 +12,5 @@
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     // variables de sesion
-    $_SESSION["x"] = 1
+    $_SESSION["x"] = 0
 ?>

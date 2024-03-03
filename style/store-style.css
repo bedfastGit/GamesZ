@@ -651,7 +651,7 @@ footer{
 .draw-x{
     width: 0.5em;
     height: 0.5em;
-    border: 0.2em solid #bababa;
+    border: 0.2em solid #ebebeb;
     border-left: 0;
     border-top: 0;
 
@@ -665,7 +665,7 @@ footer{
 .draw-x2{
     width: 0.5em;
     height: 0.5em;
-    border: 0.2em solid #bababa;
+    border: 0.2em solid #ebebeb;
     border-left: 0;
     border-top: 0;
 
@@ -676,7 +676,22 @@ footer{
     margin-top: 0.6em;
 }
 
+.page-list{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
 
+.page-list a{
+    text-decoration: none;
+    color: rgb(165, 165, 165);
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.page-list a:hover{
+    color: white;
+}
 
 
 
