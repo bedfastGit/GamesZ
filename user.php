@@ -1,3 +1,10 @@
+<?php
+
+require("start_login.php");
+require("start_registro.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,20 +19,20 @@
     <img src="pics/imagenlog2.png" alt="Fondo de la tienda de videojuegos" class="background-image">
     <div class="content-box" id="usuario">
         <a href="index.html"> <img src="pics/gamesz.png" alt="Logo de la tienda de videojuegos" class="logo"> </a>
-      <form class="form" id="loginForm">
+      <form class="form" method="post" action="/start_login.php" id="loginForm">
         <label for="username" class="label">Usuario</label>
         <div class="input-container">
           <span class="input-icon">&#x1F464;</span>
-          <input type="text" id="username" class="user-input" placeholder="Nombre de usuario" required>
+          <input type="text" name="name" id="username" class="user-input" placeholder="Nombre de usuario" required>
         </div>
 
         <label for="password" class="label">Contraseña</label>
         <div class="input-container">
           <span class="input-icon">&#x1F512;</span>
-          <input type="password" id="password" class="password-input" placeholder="Contraseña" required>
+          <input type="password" id="password" name="pass" class="password-input" placeholder="Contraseña" required>
         </div>
 
-        <button type="submit" onclick='login()' class="login-button">Iniciar Sesión</button>
+        <button type="submit" name="login" class="login-button">Iniciar Sesión</button>
       </form>
 
       <div class="additional-options">
@@ -39,21 +46,21 @@
     <div class="content-box" id="crear">
 
         <a href="index.html"> <img src="pics/gamesz.png" alt="Logo de la tienda de videojuegos" class="logo"> </a>
-      <form class="form" id="loginFormdos" onsubmit="return validarFormulario()">
+      <form action="start_registro.php" method="post" class="form" id="loginFormdos" onsubmit="return validarFormulario()">
 
         <div class="input-container-CPa">
             <label for="correo"></label>
             <input type="email" id="correo" placeholder="Correo" class="correo-input" name="correo" required>
 
             <label for="contrasena">
-            <input type="password" id="contrasena" placeholder="Contraseña" class="contrasena-input" name="contrasena" required>
+            <input type="password" id="contrasena" placeholder="Contraseña" class="contrasena-input" name="contraseña" required>
             </label>
             <button type="button" class="mostrar" onclick="mostrarOcultarContrasena()">Mostrar</button>
         </div>
 
         <div class="input-container-UsA">
             <label for="nombre"></label>
-            <input type="text" id="nombre" class="usuario-input" placeholder="Nombre de usuario" required>
+            <input type="text" id="nombre" name="nombre" class="usuario-input" placeholder="Nombre de usuario" required>
             
             <label for="apellido"></label>
             <input type="text" id="apellido" placeholder="Apellido" class="apellido-input" name="apellido" required>
@@ -81,7 +88,7 @@
             </label>
         </div>
 
-        <br><button type="submit" class="login-button">Crear cuenta</button>
+        <br><button type="submit" name="register" class="login-button">Crear cuenta</button>
 
         <div class="back">
            <br> <label for="atras" class="back" onclick='atrasSatanas("usuario", "crear")'>Atras</label>
@@ -89,8 +96,11 @@
       </form>
 
     </div>
-    </div>
+  </div>
 
   <script src="scripts/script.js"></script>
+
+
+
 </body>
 </html>
