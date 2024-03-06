@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         // Si las credenciales son válidas, inicia sesión y redirige a la página principal
         $_SESSION["username"] = $username;
-        header("Location: index.php");
+        header("Location: control.php");
         exit();
     } else {
         header("Location: user.php");

@@ -18,7 +18,7 @@ require("start_registro.php");
 
     <img src="pics/imagenlog2.png" alt="Fondo de la tienda de videojuegos" class="background-image">
     <div class="content-box" id="usuario">
-        <a href="index.html"> <img src="pics/gamesz.png" alt="Logo de la tienda de videojuegos" class="logo"> </a>
+        <a href="index.php"> <img src="pics/gamesz.png" alt="Logo de la tienda de videojuegos" class="logo"> </a>
       <form class="form" method="post" action="start_login.php" id="loginForm">
         <label for="username" class="label">Usuario</label>
         <div class="input-container">
@@ -45,7 +45,7 @@ require("start_registro.php");
     
     <div class="content-box" id="crear">
 
-        <a href="index.html"> <img src="pics/gamesz.png" alt="Logo de la tienda de videojuegos" class="logo"> </a>
+        <a href="index.php"> <img src="pics/gamesz.png" alt="Logo de la tienda de videojuegos" class="logo"> </a>
       <form action="start_registro.php" method="post" class="form" id="loginFormdos" onsubmit="return validarFormulario()">
 
         <div class="input-container-CPa">

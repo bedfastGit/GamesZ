@@ -1,3 +1,8 @@
+<?php
+require("start_login.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,15 +17,15 @@
     <!-- Navbar -->
         <header class="header">
             <!-- brand logo -->
-            <a class="navbar-brand" href="index.html"><img src="pics/gamesz.png"></a>
+            <a class="navbar-brand" href="index.php"><img src="pics/gamesz.png"></a>
             <!-- pages list -->
             <div class="menu-list-div">
                 <ul class="menu-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="store.html">Games</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="store.php">Games</a></li>
                     <li><a href="contacto.html">Contact</a></li>
                     <li>
-                        <a href="user.html">
+                        <a href="user.php">
                             <div id="search-div"><img id="search-icon" src="pics/user-icon.png"></div>
                         </a>
                     </li>
