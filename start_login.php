@@ -1,21 +1,9 @@
 <?php
 session_start(); // Inicia la sesión
+require('initdb.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
-    // Verifica si se ha enviado un formulario de inicio de sesión
 
-    // Conexión a la base de datos (debes configurar las credenciales según tu entorno)
-    $servername = "localhost";
-    $username = "alejandro";
-    $password = "1234";
-    $dbname = "prueba1";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Verifica la conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Obtén los datos del formulario
     $username = $_POST["name"];
@@ -28,11 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])) {
     if ($result->num_rows > 0) {
         // Si las credenciales son válidas, inicia sesión y redirige a la página principal
         $_SESSION["username"] = $username;
-        header("Location: index.html");
+        header("Location: index.php");
         exit();
     } else {
-        // Si las credenciales son inválidas, muestra un mensaje de error
-        echo "Nombre de usuario o contraseña incorrectos";
+        header("Location: user.php");
     }
 
     $conn->close();
