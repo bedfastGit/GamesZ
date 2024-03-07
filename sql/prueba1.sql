@@ -74,7 +74,7 @@ INSERT INTO `productos` (`id`, `nombre`, `stock`, `precio`, `p_descuento`, `orde
 ('switch_og', 'Nintendo Switch', 0, '279.69', '0.00', 12, 0, 'content-div nintendo consolas handheld', 'switch.png', NULL),
 ('switch_oled', 'Nintendo Switch Oled', 1, '350.45', '0.00', 13, 0, 'content-div nintendo consolas handheld', 'switcholed.png', NULL),
 ('tlou2', 'The Last of Us: Part II', 1, '69.99', '0.00', 15, 0, 'content-div juegos playstation pc aventura', 'tlou2.png', NULL),
-('vamp', 'Vampire Survivors', 1, '9.89', '15.00', 17, 0, 'content-div deals juegos pc aventura', 'vampiresurvivor.png', 'halo3.mp4'),
+('vamp', 'Vampire Survivors', 1, '9.89', '15.00', 17, 0, 'content-div deals juegos pc aventura', 'vampiresurvivor.png', 'chupo.mp4'),
 ('xbox_s', 'Xbox Series S', 1, '267.34', '0.00', 11, 0, 'content-div xbox consolas', 'seriess.png', NULL),
 ('xbox_x', 'Xbox Series X', 1, '480.66', '0.00', 10, 0, 'content-div xbox consolas', 'seriesx.png', NULL);
 
