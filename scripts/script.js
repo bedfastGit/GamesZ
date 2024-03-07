@@ -1,13 +1,12 @@
 function login() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
   
     // Verifica las credenciales
     if (username === "user" && password === "user") {
       // Credenciales correctas
-      window.location.href = 'control.html';
-
-      alert("Inicio de sesión exitoso");
+      alert("Inicio de sesión exitoso"); // le dije que lo quitara, SoyLejo_360
+      window.open("control.html")
 
 
     } else {
@@ -25,7 +24,6 @@ function login() {
         alert("Ingrese un correo electrónico válido");
         return false;
     } else {
-      alert("Felicidades! Has creado tu cuenta!")
     return true;
     }
   }
@@ -62,14 +60,15 @@ const miBoton = document.getElementById('miBoton');
     miBoton.style.left = `${Math.min(window.innerWidth - 100, Math.max(0, nuevoLeft))}px`;
   }
 
-  miBoton.addEventListener('mouseover', () => {
+  if (miBoton != null) { miBoton.addEventListener('mouseover', () => {
     mouseEncima = true;
   });
+}
 
-  miBoton.addEventListener('mouseout', () => {
+  if (miBoton != null){miBoton.addEventListener('mouseout', () => {
     mouseEncima = false;
   });
-
+  }
   document.addEventListener('mousemove', (event) => {
     if (mouseEncima) {
       const mouseX = event.clientX;

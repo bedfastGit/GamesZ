@@ -18,6 +18,7 @@
     height: 1.1em;
     margin: auto;
     transition: transform .2s;
+    filter: invert(90%);
 }
 
 #search-div:hover #search-icon{
@@ -90,8 +91,6 @@
     -webkit-mask-image: url(../pics/mask-user-icon.png);
     mask-image: url(../pics/mask-user-icon.png);
     -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    -webkit-mask-position: bottom;
     mask-repeat: no-repeat;
 }
 
