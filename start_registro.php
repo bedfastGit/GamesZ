@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $conn->query($sql);
     if ($result) {
         // Registro exitoso, redirige al usuario a la página principal
-        $_SESSION["username"] = $nombre;
+
         header("Location: index.php");
         exit();
     } else {
