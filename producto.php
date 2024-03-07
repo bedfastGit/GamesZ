@@ -11,7 +11,7 @@
 
   $titulo = "producto";
   // Consulta para obtener los datos de producto desde la base de datos
-  $sql = "SELECT * FROM productos WHERE id = '$mi_producto'"; // Cambia '1' según el ID del producto que quieras mostrar
+  $sql = "SELECT * FROM productos WHERE id = '$mi_producto'"; 
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
@@ -34,7 +34,7 @@
     <meta charset="UTF-8">
     <title><?= $titulo ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/xicon" href="pics/gamesz.png">
+    <link rel="icon" type="image/xicon" href="pics/gamesz.png"> 
     <link rel="stylesheet" type="text/css" href="style/navbar-style.css">
     <link rel="stylesheet" type="text/css" href="style/store-style.css">
     <link rel="stylesheet" type="text/css" href="style/producto.css">
@@ -62,28 +62,11 @@
         <!--<div id="user-div"><a class="user-icon" href="user.html"><img src="pics/user-icon.png"></a></div>-->
         <div id="user-div" style="visibility: hidden"></div>
     </header>
-    <main>
-
-        <div class="menu-list-div">
-            <ul class="menu-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="store.html">Games</a></li>
-                <li><a href="contacto.html">Contact</a></li>
-                <li>
-                    <a href="user.html">
-                        <div id="search-div"><img id="search-icon" src="pics/user-icon.png"></div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <!-- user img -->
-        <!--<div id="user-div"><a class="user-icon" href="user.html"><img src="pics/user-icon.png"></a></div>-->
-        <div id="user-div" style="visibility: hidden"></div>
-   
-    <div id="elden"></div>
-    <div class="mifondo"> </div>
+     
+    
+    <div class="mifondo" style="background-image: url('<?= 'pics/' . $row["img"] ?>')"> </div>
     <div class="producto">
-    src="<?= 'pics/' . $item["img"] ?>"
+    <img src="<?= 'pics/' . $row["img"] ?>">
     <div class="info" id="info">
       <h1 id="nombre"><?php echo $nombre; ?></h1>
       <p class="stock">  Steam | <?php echo ($stock > 0) ? 'En stock ✅' : 'Agotado ❌'; ?> | Descarga digital ✅  </p>
@@ -172,5 +155,7 @@
     <!-- footer section -->
       <?php require ('_end_foot.php'); ?>
 
+</body>
+</html>
 
 
