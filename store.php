@@ -1,7 +1,7 @@
 <?php
     $titulo = "Store";
     require ("initdb.php");
-    $my_limit = 9;
+    $my_limit = 12;
 
     if (isset($_GET["id"])){
         $my_offset = $_GET["id"] * $my_limit;

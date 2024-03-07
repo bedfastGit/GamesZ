@@ -3,9 +3,9 @@
     $titulo = "Home";
 
     // realizamos las consultas necesarias para cada seccion
-    $consulta_juego = "select * from productos where tags like '%juego%' && tags not like '%deals%' limit 6 ;";
+    $consulta_juego = "select * from productos where tags like '%juego%' && tags not like '%deals%' order by orden limit 6 ;";
     $consulta_hw = "select * from productos where tags like '%sobremesa%' || tags like '%consolas%' limit 6 ;";
-    $consulta_deals = "select * from productos where tags like '%deals%' limit 3 ;";
+    $consulta_deals = "select * from productos where tags like '%deals%' order by orden limit 3 ;";
 
     //guardamos dichas consultas
     $save_juego = $conn -> query($consulta_juego);
