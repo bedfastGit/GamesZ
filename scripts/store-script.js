@@ -35,7 +35,7 @@ function playvid(e){
     let discount_pic = mypic.nextElementSibling
 
     //alert(mypic + myvid)
-    if (discount_pic != null) discount_pic.style.display = "none"
+    if (discount_pic != null && myvid != null) discount_pic.style.display = "none"
     if (myvid != null) mypic.style.display = "none"
     if (myvid != null)myvid.style.display = "flex"
 
