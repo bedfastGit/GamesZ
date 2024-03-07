@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3308
--- Tiempo de generación: 02-03-2024 a las 17:36:21
+-- Tiempo de generación: 07-03-2024 a las 08:38:43
 -- Versión del servidor: 5.7.24
 -- Versión de PHP: 8.0.1
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `prueba1`
 --
+CREATE DATABASE IF NOT EXISTS `prueba1` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `prueba1`;
 
 -- --------------------------------------------------------
 
@@ -61,15 +63,44 @@ INSERT INTO `productos` (`id`, `nombre`, `stock`, `precio`, `p_descuento`, `orde
 ('xbox_s', 'Xbox Series S', 1, '267.34', '0.00', 11, 0, 'content-div xbox consolas', 'seriess.png', NULL),
 ('xbox_x', 'Xbox Series X', 1, '480.66', '0.00', 10, 0, 'content-div xbox consolas', 'seriesx.png', NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(8) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `pass` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `pass`) VALUES
+(1, 'lejo', '1234');
+
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `productos`
+-- Indices de la tabla `usuarios`
 --
-ALTER TABLE `productos`
+ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
