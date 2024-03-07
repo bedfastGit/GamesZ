@@ -1,5 +1,12 @@
 <?php
+require('initdb.php');
 require("start_login.php");
+$name = $_SESSION["username"];
+if (!isset($_SESSION["username"])){
+  $name = "lejo";
+}
+$consulta = "select * from usuarios where nombre = '$name';";
+$saveuser = $conn -> query($consulta);
 ?>
 
 
@@ -50,7 +57,7 @@ require("start_login.php");
         </div>
       </div>
       <div class="user-details">
-        <h2>Nombre de Usuario</h2>
+        <h2><?php foreach ($saveuser as $key => $usuario): ?><?= $usuario["nombre"] ?><?php endforeach; ?></h2>
         <p>Correo electrónico: usuario@usuario.com</p>
         <p>Fecha de registro: 15/02/2024</p>
       </div>
