@@ -24,7 +24,6 @@ function login() {
         alert("Ingrese un correo electrónico válido");
         return false;
     } else {
-      alert("Felicidades! Has creado tu cuenta!")
     return true;
     }
   }
