@@ -11,22 +11,10 @@
 </head>
 <body>
     <!-- Navbar -->
-    <header class="header">
-        <a class="navbar-brand" href="index.html"><img src="pics/gamesz.png" alt="GamesZ Logo"></a>
-        <div class="menu-list-div">
-            <ul class="menu-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="store.html">Games</a></li>
-                <li><a href="contacto.html">Contact</a></li>
-                <li>
-                    <a href="user.html">
-                        <div id="search-div"><img id="search-icon" src="pics/user-icon.png" alt="User Icon"></div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div id="user-div" style="visibility: hidden"></div>
-    </header>
+
+    <?php
+        require('_start_wnav.php');
+    ?>
 
     <br><br><br><br>
 
