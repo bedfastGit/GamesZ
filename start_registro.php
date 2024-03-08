@@ -1,5 +1,5 @@
 <?php
-session_start(); // Inicia la sesión
+session_start(); 
 require('initdb.php');
 
 
@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $conn->query($sql);
     if ($result) {
         // Registro exitoso, redirige al usuario a la página principal
-
         header("Location: index.php");
         exit();
     } else {
