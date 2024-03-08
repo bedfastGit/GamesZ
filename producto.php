@@ -92,16 +92,42 @@
     </div>
   </div>
 
-  <div class="descripcion">
-    <div class="acercade">
-      <h2 id="h2a">Descripción</h2>
-      <p><?php echo $row['descripcion']; ?></p>
-    </div>
-    <div class="review">
-      <h2 id="h2r">Instalación y reseñas</h2>
-      <p><?php echo $row['review']; ?></p>
-    </div>
-  </div>
+  <div class="descripcion" style="margin-bottom: 100px;">
+  <?php  
+  require("initdb.php");
+  if (isset($_GET["id"])){
+    $info_producto = $_GET["id"];
+  }
+  else {
+    echo "algo salio mal we";
+  }
+  $sql = "SELECT * FROM info_producto WHERE id = '$info_producto'"; 
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+      // output data of each row
+      $row2 = $result->fetch_assoc();
+      $descripcion = $row2['descripcion'];
+      $review = $row2['review'];
+      
+      // Mostrar la descripción
+      echo '<div class="acercade">';
+      echo '<h2 id="h2a" style="margin-bottom: 40px;">Descripción</h2>';
+      echo '<p style="font-size: 18px;">' . $descripcion . '</p>';
+      echo '</div>';
+
+      // Mostrar la reseña
+      echo '<div class="review">';
+      echo '<h2 id="h2r" style="margin-bottom: 40px;">Instalación y reseñas</h2>';
+      echo '<p style="font-size: 18px;">' . $review . '</p>';
+      echo '</div>';
+  } else {
+    echo "No hay descripciones para este producto";
+  }
+  $conn->close();
+  ?>
+</div>
+
 
   <div class="trailer">
 
