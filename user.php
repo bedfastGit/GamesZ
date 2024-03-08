@@ -1,5 +1,4 @@
 <?php
-
 require("start_login.php");
 require("start_registro.php");
 ?>

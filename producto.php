@@ -92,7 +92,7 @@
     </div>
   </div>
 
-  <div class="descripcion" style="margin-bottom: 100px;">
+
   <?php  
   require("initdb.php");
   if (isset($_GET["id"])){
@@ -105,28 +105,32 @@
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
-      // output data of each row
-      $row2 = $result->fetch_assoc();
-      $descripcion = $row2['descripcion'];
-      $review = $row2['review'];
-      
-      // Mostrar la descripción
-      echo '<div class="acercade">';
-      echo '<h2 id="h2a" style="margin-bottom: 40px;">Descripción</h2>';
-      echo '<p style="font-size: 18px;">' . $descripcion . '</p>';
-      echo '</div>';
-
-      // Mostrar la reseña
-      echo '<div class="review">';
-      echo '<h2 id="h2r" style="margin-bottom: 40px;">Instalación y reseñas</h2>';
-      echo '<p style="font-size: 18px;">' . $review . '</p>';
-      echo '</div>';
-  } else {
+    // output data of each row
+    $row2 = $result->fetch_assoc();
+    $descripcion = $row2['descripcion'];
+    $review = $row2['review'];
+    $noticia = $row2['noticia'];
+    $img_noticia = $row2['img_noticia'];
+    $desc_noticia = $row2['desc_noticia'];
+  }
+  else {
     echo "No hay descripciones para este producto";
   }
   $conn->close();
   ?>
-</div>
+
+  <div class="descripcion" style="margin-bottom: 100px;">
+  <div class="acercade">
+    <h2 id="h2a" style="margin-bottom: 40px;">Descripción</h2>
+    <p style="font-size: 18px;"><?php echo $descripcion; ?></p>
+  </div>
+
+  <div class="review">
+    <h2 id="h2r" style="margin-bottom: 40px;">Instalación y reseñas</h2>
+    <p style="font-size: 18px;"><?php echo $review; ?></p>
+  </div>
+
+  </div>
 
 
   <div class="trailer">
@@ -145,37 +149,16 @@
     <h1>Noticias recientes de este juego</h1>
     
     <div class="primera">
-      <img src="Producto GamesZ/noticia1elden.jpg" class="n1">
+      <img src="<?= 'pics/' . $row2["img_noticia"] ?>" class="n1" style="width: 400px;">
       <div class="texto1">
-          <a href="<?php echo $row['enlace_noticia1']; ?>">
-      <h4><?php echo $row['titulo_noticia1']; ?></h4>
+      <h4><?php echo $row2['noticia']; ?></h4>
       </a>
-      <p><?php echo $row['descripcion_noticia1']; ?></p>
+      <p style="padding-top: 30px;"><?php echo $row2['desc_noticia']; ?></p>
       </div>
     </div><br><br><hr><br><br>
 
     
-      <div class="segunda">
-          
-        <img src="Producto GamesZ/noticia2elden.jpg" class="n2">
-        <div class="texto1">
-            <a href="<?php echo $row['enlace_noticia2']; ?>">
-        <h4><?php echo $row['titulo_noticia2']; ?></h4><br>
-        </a>
-        <p><?php echo $row['descripcion_noticia2']; ?></p>
-        </div>
-      </div><br><br><hr><br><br>
-
       
-        <div class="tercera">
-          <img src="Producto GamesZ/noticia3elden.jpg" class="n3">
-          <div class="texto1">
-              <a href="<?php echo $row['enlace_noticia3']; ?>">
-          <h4><?php echo $row['titulo_noticia3']; ?></h4><br>
-          </a>
-          <p><?php echo $row['descripcion_noticia3']; ?></p>
-          </div>
-        </div><br><br><hr><br><br>
     
       </div>
     <!-- footer section -->
