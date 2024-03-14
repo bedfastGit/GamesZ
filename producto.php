@@ -145,26 +145,50 @@
   
   </div>
 
-  <div class="noticias">
-    <h1>Noticias recientes de este juego</h1>
-    
-    <div class="primera">
-      <img src="<?= 'pics/' . $row2["img_noticia"] ?>" class="n1" style="width: 400px;">
-      <div class="texto1">
-      <h4><?php echo $row2['noticia']; ?></h4>
-      </a>
-      <p style="padding-top: 30px;"><?php echo $row2['desc_noticia']; ?></p>
-      </div>
-    </div><br><br><hr><br><br>
 
+<?php
+
+require("initdb.php");
+
+$id_producto = $_GET['id'];
+$consulta_noticias = "SELECT * FROM noticias WHERE id ='$id_producto'";
+$con_noticia = $conn->query($consulta_noticias);
+
+$noticias = array();
+
+if ($con_noticia->num_rows > 0) {
     
-      
-    
-      </div>
+    while ($row3 = $con_noticia->fetch_assoc()) {
+        $noticias[] = $row3;
+    }
+}
+else{
+    echo "<div class='noticias'>";
+    echo "<h1>Noticias recientes de este juego</h1><br>";
+    echo "<p>No se encontraron noticias para este producto.</p><br><br><br>";
+    echo "</div>";
+    exit; 
+}
+
+?>
+
+<div class="noticias">
+    <h1>Noticias recientes de este juego</h1>
+    <?php foreach ($noticias as $noticia): ?>
+    <div class="primera">
+        <img src="<?= 'pics/' . $noticia["img_noticia"] ?>" class="n1" style="width: 400px;">
+        <div class="texto1">
+            <h4><?php echo $noticia['titulo']; ?></h4>
+            <p style="padding-top: 30px;"><?php echo $noticia['contenido']; ?></p>
+        </div>
+    </div>
+    <br><br><hr><br><br>
+    <?php endforeach; ?>
+</div>
+
+
     <!-- footer section -->
       <?php require ('_end_foot.php'); ?>
 
 </body>
 </html>
-
-
